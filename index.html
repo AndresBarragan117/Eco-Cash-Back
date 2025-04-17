@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style-index.css">
+    <link rel="icon" href="img/titulo-logo.ico">
     <title>Eco Cash Back</title>
 </head>
 <body>
-    <header>
-        <h1>Eco Cash Back</h1>
+    <header class="header">
+        <img class="logo" src="img/titulo-logo.png" alt="">
+        <h1 class="title-header">Eco Cash Back</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="html/inicio-sesion.html">Iniciar Sesión</a></li>
-            <li><a href="html/registro.html">Registrarse</a></li>
+    <nav class="nav">
+        <ul class="barnav">
+            <li class="menu"><a href="index.html">Inicio</a></li>
+            <li class="menu"><a href="#como-paricipar">Como Participar</a></li>
+            <li class="menu"><a href="html/registro.html">Registrarse</a></li>
+            <li class="menu"><a href="html/inicio-sesion.html">Iniciar Sesión</a></li>
         </ul>
     </nav>
 
@@ -24,5 +31,80 @@
             <p>Tu plataforma de recompensas por compras sostenibles.</p>
         </div>
     </section>
+
+    <section id="como-paricipar" class="como-participar">
+        <div class="icono-titulo">
+            <img class="icono" src="img\icono_como_participar.png" alt="">
+            <h2>Como Participar</h2>
+        </div>
+
+        <div class="info-participar">
+            <p class="info-participar-texto">
+                Este proyecto innovador tiene como objetivo optimizar el proceso de reciclaje y fomentar la participación de la comunidad en la preservación del medio ambiente.
+            </p>
+            <p class="info-participar-texto">
+                ¿Quieres saber cómo puedes participar en nuestro sistema de reciclaje y obtener recompensas por tus esfuerzos? Aquí te explicamos los pasos sencillos que debes seguir para unirte a nuestra causa y comenzar a marcar la diferencia.
+            </p>
+        </div>
+
+        <div class="info-participar">
+            <div class="registro-deposito">
+                <h3>Registro</h3>
+                <p class="info-registro-deposito">
+                    Primero, regístrate en nuestro sistema utilizando tu dirección de correo electrónico o a través de tus redes sociales favoritas. Esto te permitirá acceder a todas las funcionalidades y recibir tus recompensas por participar.
+                </p>
+            </div>
+            <div class="registro-deposito">
+                <h3>Depóstio</h3>
+                <p class="info-registro-deposito">
+                    Lleva tus materiales reciclables a los puntos de recolección designados. Puedes encontrarlos en nuestra página web. Asegúrate de seguir las indicaciones específicas para cada tipo de material.
+                </p>
+            </div>
+        </div>
+
+        <div class="info-materiales">
+            <h2>Información de Materiales</h2>
+            <p class="info-materiales-texto">Una vez registrado, utiliza nuestra interfaz amigable para identificar y clasificar tus botellas plásticas y latas de refrescos. El sistema te guiará paso a paso para asegurarse de que todo esté correctamente separado y listo para reciclar.</p>
+        </div>
+
+        <div class="materiales">
+            <div class="botellas">
+                <h3>Botellas Plasticas</h3>
+                <img class="img-botella-latas" src="img\img-botellas-plasticas.png" alt="">
+            </div>
+    
+            <div class="botellas">
+                <h3>Latas de Refresco</h3>
+                <img class="img-botella-latas" src="img\img-latas.png" alt="">
+            </div>
+        </div>
+
+        <div class="info-recompensas">
+            <h3>Recibe tus Recompensas</h3>
+            <p>Una vez que llegues a los puntos de recolección designados, entraras a la aplicacion movil e inicias sesion, escaneas el codigo de usuario en la maquina para identificar a que usuario seran agregados los puntos, despues de escanear el codigo de usuario en al maquina podras agregar los materiales reciclables donde estos seran procesados, luego recibirás tus recompensas en forma de puntos virtuales. Estos puntos pueden ser canjeados por descuentos en tiendas locales, productos ecológicos y otras ventajas exclusivas.</p>
+            <p>¡Comparte tu Éxito! No olvides compartir tus logros y animar a otros a unirse a la causa. Cuantos más seamos, mayor será el impacto positivo que podamos generar en nuestro entorno y en el mundo en general.</p>
+        </div>
+        
+    </section>
+
+    <footer class="footer">
+        <section class="icono-redes">
+            <div class="redes-sociales">
+                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-facebook"></i></i></a>
+                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
+            </div>
+        </section>
+        <section class="avisos">
+            <a href="#">Avisos Legales</a>
+            <a href="#">Políticas de Privacidad</a>
+            <a href="#">Políticas de Cookies</a> 
+        </section>
+        <div class="derechos">
+            <p>&copy; 2025 - Eco Cash Back | Todos los Derechos Reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
