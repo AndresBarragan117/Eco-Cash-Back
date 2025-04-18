@@ -1,0 +1,436 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/7224852.jpg);
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el fondo */
+    background-attachment: fixed; /* Mantiene la imagen de fondo fija al hacer scroll */
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h3{
+    text-align: center;
+    font-size: 2em;
+    margin: 15px 0 20px 0;
+}
+
+a{
+    font-weight: bold;
+}
+
+p{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    padding-top: 4em;
+    margin: 1.5em 0em;
+}
+
+.header{
+    width: 80%;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    opacity: 0.9;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 20px 0px 0px;
+    margin: 0 auto;
+}
+
+header .logo{
+    height: 8em;
+}
+
+.title-header{
+    font-size: 4em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav{ 
+    width: 80%;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    opacity: 0.9;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 20px 20px;
+    margin: 0 auto;
+}
+
+.barnav{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0;
+}
+
+.menu{
+    width: 20%;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 30px;
+    transition: background-color 0.5s;
+    background-color: #979797;
+    margin: 0em 1em;
+    cursor: pointer;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu:hover{
+    background-color: #009c77;
+    color: black;
+    font-weight: bold;
+    box-shadow: 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    border: 2px solid black;
+}
+
+.video{
+    padding-top: 0.5em;
+}
+
+.fullscreen-video {
+    width: 65%;
+    height: 65%;
+    object-fit: cover; 
+    border: 2px solid #000;
+    box-shadow: 4px 4px 10px #383737;
+    border-radius: 15px;
+}
+
+.texto-video{
+    position: absolute;
+    width: 30%;
+    height: 28%;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 5em 9em rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.nosotros{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #ffffff;
+    border-radius: 20px;
+    opacity: 0.9;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.info-nosotros{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-diferentes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    margin: 0 auto;
+}
+
+.cuatro-cuandros{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0em 1em;
+    margin-bottom: 2em;
+    align-self: flex-start;
+    border: 2px solid #009c77;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.vision-mision{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 1em 0em;
+}
+
+.vision-mision-texto{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 3em;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.nube{
+    border: #009c77 dashed 3px;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+.texto-nosotros{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-bottom: 1em;
+}
+
+.como-participar{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #ffffff;
+    border-radius: 20px;
+    opacity: 0.9;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.icono-titulo{
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.icono{
+    width: 5em;
+    height: 5em;
+    margin-right: 1em;
+}
+
+.info-participar{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.info-participar-texto{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 2em;
+    text-align: center;
+}
+
+.registro-deposito{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: #009c77 solid 2px;
+    border-radius: 50px;
+    margin: 0em 2em;
+    padding-bottom: 1em;
+}
+
+.info-registro-deposito{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 2em;
+    text-align: center;
+}
+
+.info-materiales{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.info-materiales-texto{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 2em;
+    text-align: center;
+}
+
+.materiales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    margin-top: 1em;
+}
+
+.botellas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 2em;
+    border: #009c77 dotted 5px;
+    border-radius: 15em;
+    padding: 2em;
+}
+
+.img-botella-latas{
+    width: 25em;
+    height: 20em;
+    border-radius: 40%;
+}
+
+.info-recompensas{
+    width: 50%;
+    text-align: center;
+    margin: 1em 0em;
+}
+
+.boton-registro{
+    width: 20%;
+    margin-bottom: 1em;
+    background-color: #009c77;
+    border: 2px solid black;
+    transition: background-color 0.5s;
+}
+
+.mapa{
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+}
+
+.footer {
+    line-height: 1.5;
+    background-color: #505050;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avisos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-bottom: 10px;
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
+}
+
+.avisos a {
+    color: #ffffff;
+}
+
+.derechos {
+    margin-top: auto; 
+}
+
+.icono-redes{
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
+}
+
+.redes-sociales{
+    margin-bottom: 10px;
+}
+.redes-sociales a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #111; 
+    font-size: 30px;
+    transition: color 0.3s ease; 
+}
+
+.redes-sociales .fa-facebook:hover {
+    color: #0b57ca; 
+}
+
+.redes-sociales .fa-whatsapp:hover {
+    color: #00bb1f; 
+}
+
+.redes-sociales .fa-instagram:hover {
+    color: #7c2197; 
+}
+
+.redes-sociales .fa-twitter:hover {
+    color: #ffffff; 
+}
+
+.redes-sociales .fa-google-plus:hover {
+    color: #e01d1d; 
+}
