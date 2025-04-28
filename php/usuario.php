@@ -3,7 +3,7 @@
     require_once ('php/conexion.php');
 
     class Usuario {
-        private $id;
+        private $id_usuario;
         public $primer_nombre;
         public $segundo_nombre;
         public $primer_apellido;
@@ -18,7 +18,7 @@
         public $estado;
 
         function __construct($id, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $cedula, $telefono, $email, $contrasena, $codigo_qr, $fecha_registro, $rol, $estado) {
-            $this->id = $id;
+            $this->id_usuario = $id;
             $this->primer_nombre = $primer_nombre;
             $this->segundo_nombre = $segundo_nombre;
             $this->primer_apellido = $primer_apellido;
@@ -33,6 +33,12 @@
             $this->estado = "activo"; // Active by default
         }
 
+        public function getIdUsuario() {
+            return $this->id_usuario;
+        }
+        public function setIdUsuario($id_usuario) {
+            $this->id_usuario = $id_usuario;
+        }
         public function getPrimerNombre() {
             return $this->primer_nombre;
         }

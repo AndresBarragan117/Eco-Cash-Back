@@ -43,7 +43,7 @@ section{
 }
 
 .header{
-    width: 80%;
+    width: 85%;
     height: 10em;
     display: flex;
     justify-content: center;
@@ -65,7 +65,7 @@ header .logo{
 }
 
 .nav{ 
-    width: 80%;
+    width: 85%;
     height: 4em;
     display: flex;
     justify-content: center;
@@ -80,7 +80,7 @@ header .logo{
 }
 
 .barnav{
-    width: 80%;
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +121,7 @@ header .logo{
 }
 
 .informacion{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -135,7 +135,7 @@ header .logo{
 }
 
 .informacion-usuario{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
