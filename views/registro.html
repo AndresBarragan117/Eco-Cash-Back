@@ -28,50 +28,50 @@
     </nav>
 
     <div class="form-resgistro">
-        <form action="../php/registrarse.php" method="POST" class="formulario">
+        <form action="../php/guardar-usuario.php" method="POST" class="formulario">
             <h1 class="title-registro">Registrarse</h1>
 
             <div class="contenedor-entrada">
-                <input type="text" id="first_name" name="first_name" class="recibir" placeholder="a">
-                <label for="first_name" class="etiqueta">Primer Nombre de Usuario</label>
+                <input type="text" id="primer_nombre_usr" name="primer_nombre_usr" class="recibir" placeholder="a">
+                <label for="primer_nombre_usr" class="etiqueta">Primer Nombre de Usuario</label>
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="second_name" name="second_name" class="recibir" placeholder="a">
+                <input type="text" id="segundo_nombre_usr" name="segundo_nombre_usr" class="recibir" placeholder="a">
                 <label for="second_name" class="etiqueta">Segundo Nombre de Usuario</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="text" id="first_lastname" name="first_lastname" class="recibir" placeholder="a">
+                <input type="text" id="primer_apellido_usr" name="primer_apellido_usr" class="recibir" placeholder="a">
                 <label for="first_lastname" class="etiqueta">Primer Apellido de Usuario</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="text" id="second_lastname" name="second_lastname" class="recibir" placeholder="a">
+                <input type="text" id="segundo_apellido_usr" name="segundo_apellido_usr" class="recibir" placeholder="a">
                 <label for="second_lastname" class="etiqueta">Segundo Apellido de Usuario</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="text" id="telefono" name="telefono" class="recibir" placeholder="a">
-               <label for="telefono" class="etiqueta">Telefono</label>
+                <input type="text" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a">
+                <label for="telefono" class="etiqueta">Telefono</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="text" id="cedula" name="cedula" class="recibir" placeholder="a">
+                <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a">
                 <label for="cedula" class="etiqueta">Cedula</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="email" id="email" name="email" class="recibir" placeholder="a">
+                <input type="email" id="correo_electronico_usr" name="correo_electronico_usr" class="recibir" placeholder="a">
                 <label for="email" class="etiqueta">Correo Electrónico</label>
             </div>
-            
+
             <div class="contenedor-entrada">
-                <input type="password" id="password" name="password" class="recibir" placeholder="a">
+                <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a">
                 <label for="password" class="etiqueta">Contraseña</label>
             </div>
             
-            <input id="btn-registro" type="submit" class="boton-registro" value="Registrarse">
+            <input id="btn-registro" name="registrar" type="submit" class="boton-registro" value="Registrarse">
         </form>
     </div>
 
