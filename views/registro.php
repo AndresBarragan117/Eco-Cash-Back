@@ -1,3 +1,7 @@
+<?php
+    //conexión a la base de datos
+    require_once('../php/conexion.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,59 +23,59 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../index.html">Inicio</a>
-            <a class="menu" href="../index.html#nosotros">Nosotros</a>
-            <a class="menu" href="../index.html#como-paricipar">Como Participar</a>
-            <a class="menu" href="registro.html">Registrarse</a>
-            <a class="menu" href="../views/inicio-sesion.html">Iniciar Sesión</a>
+            <a class="menu" href="../index.php">Inicio</a>
+            <a class="menu" href="../index.php#nosotros">Nosotros</a>
+            <a class="menu" href="../index.php#como-paricipar">Como Participar</a>
+            <a class="menu" href="registro.php">Registrarse</a>
+            <a class="menu" href="../views/inicio-sesion.php">Iniciar Sesión</a>
         </ul>
     </nav>
 
     <div class="form-resgistro">
-        <form action="../php/guardar-usuario.php" method="POST" class="formulario">
+        <form action="../php/administrar-usuario.php" method="POST" class="formulario">
             <h1 class="title-registro">Registrarse</h1>
 
             <div class="contenedor-entrada">
-                <input type="text" id="primer_nombre_usr" name="primer_nombre_usr" class="recibir" placeholder="a">
+                <input type="text" id="primer_nombre_usr" name="primer_nombre_usr" class="recibir" placeholder="a" required>
                 <label for="primer_nombre_usr" class="etiqueta">Primer Nombre de Usuario</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="segundo_nombre_usr" name="segundo_nombre_usr" class="recibir" placeholder="a">
-                <label for="second_name" class="etiqueta">Segundo Nombre de Usuario</label>
+                <label for="segundo_nombre_usr" class="etiqueta">Segundo Nombre de Usuario</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="primer_apellido_usr" name="primer_apellido_usr" class="recibir" placeholder="a">
-                <label for="first_lastname" class="etiqueta">Primer Apellido de Usuario</label>
+                <label for="primer_apellido_usr" class="etiqueta">Primer Apellido de Usuario</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="segundo_apellido_usr" name="segundo_apellido_usr" class="recibir" placeholder="a">
-                <label for="second_lastname" class="etiqueta">Segundo Apellido de Usuario</label>
+                <label for="segundo_apellido_usr" class="etiqueta">Segundo Apellido de Usuario</label>
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a">
-                <label for="telefono" class="etiqueta">Telefono</label>
+                <input type="tel" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a" pattern="[0-9]{10}" required>
+                <label for="telefono_usr" class="etiqueta">Telefono</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a">
-                <label for="cedula" class="etiqueta">Cedula</label>
+                <label for="cedula_usr" class="etiqueta">Cedula</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="email" id="correo_electronico_usr" name="correo_electronico_usr" class="recibir" placeholder="a">
-                <label for="email" class="etiqueta">Correo Electrónico</label>
+                <label for="correo_electronico_usr" class="etiqueta">Correo Electrónico</label>
             </div>
 
             <div class="contenedor-entrada">
-                <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a">
-                <label for="password" class="etiqueta">Contraseña</label>
+                <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required>
+                <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
             </div>
             
-            <input id="btn-registro" name="registrar" type="submit" class="boton-registro" value="Registrarse">
+            <input id="btn-registro" name="registrarse" type="submit" class="boton-registro" value="registrarse">
         </form>
     </div>
 

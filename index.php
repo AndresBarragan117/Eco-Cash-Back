@@ -18,11 +18,11 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="index.html">Inicio</a>
+            <a class="menu" href="index.php">Inicio</a>
             <a class="menu" href="#nosotros">Nosotros</a>
             <a class="menu" href="#como-paricipar">Como Participar</a>
-            <a class="menu" href="views/registro.html">Registrarse</a>
-            <a class="menu" href="views/inicio-sesion.html">Iniciar Sesión</a>
+            <a class="menu" href="views/registro.php">Registrarse</a>
+            <a class="menu" href="views//inicio-sesion.php">Iniciar Sesión</a>
         </ul>
     </nav>
 
