@@ -21,8 +21,8 @@
             <a class="menu" href="../index.html">Inicio</a>
             <a class="menu" href="../index.html#nosotros">Nosotros</a>
             <a class="menu" href="../index.html#como-paricipar">Como Participar</a>
-            <a class="menu" href="../views/registro.html">Registrarse</a>
-            <a class="menu" href="inicio-sesion.html">Iniciar Sesión</a>
+            <a class="menu" href="../views/registro.php">Registrarse</a>
+            <a class="menu" href="inicio-sesion.php">Iniciar Sesión</a>
         </ul>
     </nav>
 

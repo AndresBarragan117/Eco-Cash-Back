@@ -121,6 +121,7 @@ header .logo{
     border: 2px solid black;
 }
 
+
 .video{
     padding-top: 0.5em;
 }
@@ -368,6 +369,8 @@ header .logo{
     border-radius: 15px;
     margin-bottom: 1.5em;
 }
+
+/*------------------------------------------------------------------*/
 
 .footer {
     line-height: 1.5;
