@@ -18,9 +18,10 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../index.html">Inicio</a>
-            <a class="menu" href="../index.html#nosotros">Nosotros</a>
-            <a class="menu" href="../index.html#como-paricipar">Como Participar</a>
+            <a class="menu" href="../index.php">Inicio</a>
+            <a class="menu" href="../index.php#nosotros">Nosotros</a>
+            <a class="menu" href="../index.php#premios">Premios</a>
+            <a class="menu" href="../index.php#como-paricipar">Cómo Participar</a>
             <a class="menu" href="../views/registro.php">Registrarse</a>
             <a class="menu" href="inicio-sesion.php">Iniciar Sesión</a>
         </ul>
