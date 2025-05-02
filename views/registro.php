@@ -1,6 +1,6 @@
 <?php
-    //conexión a la base de datos
-    require_once('../php/conexion.php');
+    include_once('../modelo/conexion.php');
+    include_once('../controlador/c_registro-usuario.php');
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
     </nav>
 
     <div class="form-resgistro">
-        <form action="../php/administrar-usuario.php" method="POST" class="formulario">
+        <form action="" method="POST" class="formulario">
             <h1 class="title-registro">Registrarse</h1>
 
             <div class="contenedor-entrada">
@@ -47,7 +47,7 @@
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="primer_apellido_usr" name="primer_apellido_usr" class="recibir" placeholder="a">
+                <input type="text" id="primer_apellido_usr" name="primer_apellido_usr" class="recibir" placeholder="a" required>
                 <label for="primer_apellido_usr" class="etiqueta">Primer Apellido de Usuario</label>
             </div>
 
@@ -57,17 +57,17 @@
             </div>
 
             <div class="contenedor-entrada">
-                <input type="tel" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a" pattern="[0-9]{10}" required>
+                <input type="tel" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a" required>
                 <label for="telefono_usr" class="etiqueta">Telefono</label>
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a">
+                <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a" required>
                 <label for="cedula_usr" class="etiqueta">Cedula</label>
             </div>
 
             <div class="contenedor-entrada">
-                <input type="email" id="correo_electronico_usr" name="correo_electronico_usr" class="recibir" placeholder="a">
+                <input type="email" id="correo_electronico_usr" name="correo_electronico_usr" class="recibir" placeholder="a" required>
                 <label for="correo_electronico_usr" class="etiqueta">Correo Electrónico</label>
             </div>
 
@@ -76,7 +76,7 @@
                 <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
             </div>
             
-            <input id="btn-registro" name="registrarse" type="submit" class="boton-registro" value="registrarse">
+            <input id="btn-registro" name="btn-registrarse" type="submit" class="boton-registro" value="registrarse">
         </form>
     </div>
 

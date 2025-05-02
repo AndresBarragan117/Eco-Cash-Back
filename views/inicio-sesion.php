@@ -29,19 +29,19 @@
 
     <div class="form-iniciar-sesion">
         <form action="" class="formulario">
-        <h1 class="title-iniciar-sesion">Iniciar Sesión</h1>
-    
-        <div class="contenedor-entrada">
-            <input id="email" type="text" class="recibir" placeholder="a">
-            <label for="email" class="etiqueta">Email</label>
-        </div>
-    
-        <div class="contenedor-entrada">
-            <input id="password" type="password" class="recibir" placeholder="a">
-            <label for="password" class="etiqueta">Contraseña</label>
-        </div>
-    
-        <input id="btn-registro" type="submit" class="boton-iniciar-sesion" value="Iniciar Sesión">
+            <h1 class="title-iniciar-sesion">Iniciar Sesión</h1>
+        
+            <div class="contenedor-entrada">
+                <input id="idemail" type="text" class="recibir" placeholder="a">
+                <label for="email" class="etiqueta">Email</label>
+            </div>
+        
+            <div class="contenedor-entrada">
+                <input id="idpassword" type="password" class="recibir" placeholder="a">
+                <label for="password" class="etiqueta">Contraseña</label>
+            </div>
+        
+            <input id="btn-iniciar-sesion" type="submit" class="boton-iniciar-sesion" value="Iniciar Sesión" onclick="window.location.href='entrar-administrador.php'; return false;">
         </form>
     </div>
 

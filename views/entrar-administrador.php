@@ -1,7 +1,6 @@
 <?php
-    include_once '../php/conexion.php';
-    $sql = "SELECT * FROM usuarios";
-    $result = $conn->query($sql);
+    include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../css/entrar-admin.css">
     <link rel="icon" href="../img/titulo-logo.ico">
-    <title>Sesión Iniciada</title>
+    <title>Sesión Administrador</title>
 </head>
 <body>
     <header class="header">
@@ -24,7 +23,7 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../views/entrar-administrador.html">Usuarios</a>
+            <a class="menu" href="../views/entrar-administrador.php">Usuarios</a>
             <a class="menu" href="">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
@@ -34,6 +33,7 @@
 
     <section>
         <h1>Lista de Usuarios</h1>
+
         <table border="1" cellspacing="0" cellpadding="5">
             <thead>
                 <tr>
@@ -43,7 +43,9 @@
                     <th>Primer Apellido</th>
                     <th>Segundo Apellido</th>
                     <th>Cedula</th>
+                    <th>Teléfono</th>
                     <th>Correo</th>
+                    <th>Contraseña</th>
                     <th>QR</th>
                     <th>Fecha de Registro</th>
                     <th>Rol</th>
@@ -53,25 +55,35 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    $mostrar_usuarios = "SELECT * FROM usuarios";
+                    $resultado = $conn->query($mostrar_usuarios);
+                    
+                    while ($datos = $resultado->fetch_object()) 
+                    {
+                ?>
+                    <tr>
+                        <td><?= $datos->id_usuario_usr ?></td>
+                        <td><?= $datos->primer_nombre_usr ?></td>
+                        <td><?= $datos->segundo_nombre_usr ?></td>
+                        <td><?= $datos->primer_apellido_usr ?></td>
+                        <td><?= $datos->segundo_apellido_usr ?></td>
+                        <td><?= $datos->cedula_usr ?></td>
+                        <td><?= $datos->telefono_usr ?></td>
+                        <td><?= $datos->correo_electronico_usr ?></td>
+                        <td><?= $datos->contrasena_hash_usr ?></td>
+                        <td><?= $datos->codigo_qr_usr ?></td>
+                        <td><?= $datos->fecha_registro_usr ?></td>
+                        <td><?= $datos->rol_usr ?></td>
+                        <td><?= $datos->estado_cuenta_usr ?></td>
+                        <td><?= $datos->puntos_acumulados_usr ?></td>
+                        <td>
+                            <a href="modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>">Actualizar</a>
+                            <a href="entrar-administrador?id=<?= $datos->id_usuario_usr ?>">Borrar</a>
+                        </td>
+                    </tr>    
                 <?php 
-                    while($row = $result->fetch_assoc($result)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['id_usuario_usr'] . "</td>";
-                        echo "<td>" . $row['primer_nombre_usr'] . "</td>";
-                        echo "<td>" . $row['segundo_nombre_usr'] . "</td>";
-                        echo "<td>" . $row['primer_apellido_usr'] . "</td>";
-                        echo "<td>" . $row['segundo_apellido_usr'] . "</td>";
-                        echo "<td>" . $row['cedula_usr'] . "</td>";
-                        echo "<td>" . $row['correo_electronico_usr'] . "</td>";
-                        echo "<td><img src='" . $row['qr_usr'] . "' alt='QR'></td>";
-                        echo "<td>" . $row['fecha_registro_usr'] . "</td>";
-                        echo "<td>" . $row['rol_usr'] . "</td>";
-                        echo "<td>" . ($row['estado_usr'] ? 'Activo' : 'Inactivo') . "</td>";
-                        echo "<td>" . $row['puntos_usr'] . "</td>";
-                        echo "<td><button>Editar</button> <button>Eliminar</button></td>";
-                        echo "</tr>";
                     }
-                    $conn->close();
                 ?>
             </tbody>
         </table>
