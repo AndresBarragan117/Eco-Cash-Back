@@ -21,7 +21,7 @@
             <a class="menu" href="index.php">Inicio</a>
             <a class="menu" href="#nosotros">Nosotros</a>
             <a class="menu" href="#premios">Premios</a>
-            <a class="menu" href="#como-paricipar">Cómo Participar</a>
+            <a class="menu" href="#como-participar">Cómo Participar</a>
             <a class="menu" href="views/registro.php">Registrarse</a>
             <a class="menu" href="views/inicio-sesion.php">Iniciar Sesión</a>
         </ul>
@@ -135,7 +135,7 @@
         <p>¡Únete a nosotros en esta misión de cuidar nuestro planeta y aprovecha los beneficios de ser parte de la comunidad Eco Cash Back!</p>
     </section>
 
-    <section id="como-paricipar" class="como-participar">
+    <section id="como-participar" class="como-participar">
         <div class="icono-titulo">
             <img class="icono" src="img\icono_como_participar.png" alt="">
             <h2>Como Participar</h2>

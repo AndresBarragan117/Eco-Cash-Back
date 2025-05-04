@@ -1,3 +1,8 @@
+<?php
+    include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    include "../controlador/c-verificar_usuario.php"; // Incluir el archivo de verificación de usuario
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,27 +26,35 @@
             <a class="menu" href="../index.php">Inicio</a>
             <a class="menu" href="../index.php#nosotros">Nosotros</a>
             <a class="menu" href="../index.php#premios">Premios</a>
-            <a class="menu" href="../index.php#como-paricipar">Cómo Participar</a>
+            <a class="menu" href="../index.php#como-participar">Cómo Participar</a>
             <a class="menu" href="../views/registro.php">Registrarse</a>
             <a class="menu" href="inicio-sesion.php">Iniciar Sesión</a>
         </ul>
     </nav>
 
     <div class="form-iniciar-sesion">
-        <form action="" class="formulario">
+        <form action="" method="POST" class="formulario">
             <h1 class="title-iniciar-sesion">Iniciar Sesión</h1>
         
             <div class="contenedor-entrada">
-                <input id="idemail" type="text" class="recibir" placeholder="a">
+                <input name="email" type="text" class="recibir" placeholder="a">
                 <label for="email" class="etiqueta">Email</label>
             </div>
         
             <div class="contenedor-entrada">
-                <input id="idpassword" type="password" class="recibir" placeholder="a">
+                <input name="password" type="password" class="recibir" placeholder="a">
                 <label for="password" class="etiqueta">Contraseña</label>
             </div>
+
+            <div class="contenedor-entrada">
+                <select name="user_type" class="recibir">
+                    <option value="estudiante">Estudiante</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+                <label for="user_type" class="etiqueta">Tipo de Usuario</label>
+            </div>
         
-            <input id="btn-iniciar-sesion" type="submit" class="boton-iniciar-sesion" value="Iniciar Sesión" onclick="window.location.href='entrar-administrador.php'; return false;">
+            <input name="btn-iniciar-sesion" type="submit" class="boton-iniciar-sesion" value="Iniciar Sesión">
         </form>
     </div>
 

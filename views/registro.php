@@ -1,6 +1,6 @@
 <?php
-    include_once('../modelo/conexion.php');
-    include_once('../controlador/c_registro-usuario.php');
+    include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    include_once('../controlador/c-registro-usuario.php'); // Incluir el archivo de controlador para registro de usuario
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
             <a class="menu" href="../index.php">Inicio</a>
             <a class="menu" href="../index.php#nosotros">Nosotros</a>
             <a class="menu" href="../index.php#premios">Premios</a>
-            <a class="menu" href="../index.php#como-paricipar">Cómo Participar</a>
+            <a class="menu" href="../index.php#como-participar">Cómo Participar</a>
             <a class="menu" href="registro.php">Registrarse</a>
             <a class="menu" href="../views/inicio-sesion.php">Iniciar Sesión</a>
         </ul>

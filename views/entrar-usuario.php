@@ -1,3 +1,6 @@
+<?php
+    include "../modelo/conexion.php"; // Asegúrate de incluir la conexión a la base de datos
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/entrar.css">
     <link rel="icon" href="../img/titulo-logo.ico">
-    <title>Sesión Iniciada</title>
+    <title>Sesión Estudiante</title>
 </head>
 <body>
     <header class="header">

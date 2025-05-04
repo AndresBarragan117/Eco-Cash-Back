@@ -1,6 +1,5 @@
 <?php
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +32,12 @@
 
     <section>
         <h1>Lista de Usuarios</h1>
+        
+        <script type="text/javascript">
+            function confirmar() {
+                return confirm("¿Está seguro de que desea eliminar este usuario?");
+            }
+        </script>
 
         <table border="1" cellspacing="0" cellpadding="5">
             <thead>
@@ -79,7 +84,7 @@
                         <td><?= $datos->puntos_acumulados_usr ?></td>
                         <td>
                             <a href="modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>">Actualizar</a>
-                            <a href="entrar-administrador?id=<?= $datos->id_usuario_usr ?>">Borrar</a>
+                            <a href="../controlador/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" onclick="return confirmar()">Borrar</a>
                         </td>
                     </tr>    
                 <?php 

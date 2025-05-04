@@ -1,6 +1,6 @@
 <?php
     if (!empty($_POST["btn-registrarse"])){
-        if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])){
+        if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["segundo_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["segundo_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])){
             
             $primer_nombre_usr = $_POST["primer_nombre_usr"];
             $segundo_nombre_usr = $_POST["segundo_nombre_usr"];
@@ -20,13 +20,21 @@
             VALUES ('$primer_nombre_usr', '$segundo_nombre_usr', '$primer_apellido_usr', '$segundo_apellido_usr', '$telefono_usr', '$cedula_usr', '$correo_electronico_usr', '$contrasena_hash_usr', '$codigo_qr_usr', '$fecha_registro_usr', '$rol_usr', '$estado_cuenta_usr', $puntos_acumulados_usr)";
 
             if ($conn->query($insertar_usuario) === TRUE) {
-                echo "<span style='color: green;'>Usuario registrado correctamente.</span>";
+                echo "<script>
+                        alert('Usuario registrado correctamente.');
+                        window.location.href = '../views/inicio-sesion.php';
+                      </script>";
             } else {
-                echo "<span style='color: red;'>Error: " . $insertar_usuario . "<br>" . $conn->error . "</span>";
+                echo "<script>
+                        alert('Error: " . $conn->error . "');
+                        window.history.back();
+                      </script>";
             }
-
         } else {
-            echo "<span style='color: orange;'>Error: Todos los campos son obligatorios.</span>";
+            echo "<script>
+                    alert('Error: Todos los campos son obligatorios.');
+                    window.history.back();
+                  </script>";
         }
     }
 ?>

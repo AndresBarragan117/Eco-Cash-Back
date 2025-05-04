@@ -2,6 +2,7 @@
     $id_usuario = $_GET['id']; // Obtener el ID del usuario desde la URL
     
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    include "../controlador/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
 
     $consulta = "SELECT * FROM usuarios WHERE id_usuario_usr = $id_usuario"; // Consulta para obtener los datos del usuario
     $resultado = $conn->query($consulta); // Ejecutar la consulta
@@ -39,9 +40,8 @@
         <form action="" method="POST" class="formulario">
             <h1 class="title-registro">Modificar Usuario</h1>
             <input type="hidden" name="id" value="<?= $_GET["id"] ?>"> <!-- Campo oculto para el ID del usuario -->
+            
             <?php
-                include "../controlador/c_modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
-                //include_once('../controlador/modificar-usuario.php');
                 while($datos = $resultado->fetch_object()) 
                 {
             ?>
@@ -84,10 +84,13 @@
                         <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required value="<?= $datos->contrasena_hash_usr ?>">
                         <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
                     </div>
-
+                    
                     <div class="contenedor-entrada">
-                        <input type="text" id="rol_usr" name="rol_usr" class="recibir" placeholder="a" required value="<?= $datos->rol_usr ?>">
-                        <label for="rol_usr" class="etiqueta">Rol</label>
+                        <select name="rol_usr" class="recibir" required value="<?= $datos->rol_usr ?>">
+                            <option value="estudiante" <?= $datos->rol_usr == 'estudiante' ? 'selected' : '' ?>>Estudiante</option>
+                            <option value="administrador" <?= $datos->rol_usr == 'administrador' ? 'selected' : '' ?>>Administrador</option>
+                        </select>
+                        <label for="user_type" class="etiqueta">Tipo de Usuario</label>
                     </div>
 
                     <div class="contenedor-entrada">
