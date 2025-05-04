@@ -1,5 +1,6 @@
 <?php
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    session_start(); // Iniciar la sesión
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
             <a class="menu" href="">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
-            <a class="menu" href="">Cerrar Sesión</a>
+            <a class="menu" href="../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
 
@@ -43,10 +44,10 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Primer Nombre</th>
-                    <th>Segundo Nombre</th>
+                    <th>Nombres Completos de Usuarios</th>
+                    <!--<th>Segundo Nombre</th>
                     <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
+                    <th>Segundo Apellido</th>-->
                     <th>Cedula</th>
                     <th>Teléfono</th>
                     <th>Correo</th>
@@ -69,10 +70,10 @@
                 ?>
                     <tr>
                         <td><?= $datos->id_usuario_usr ?></td>
-                        <td><?= $datos->primer_nombre_usr ?></td>
-                        <td><?= $datos->segundo_nombre_usr ?></td>
+                        <td><?= $datos->primer_nombre_usr ." ". $datos->segundo_nombre_usr ." ". $datos->primer_apellido_usr ." ". $datos->segundo_apellido_usr ?></td>
+                        <!--<td><?= $datos->segundo_nombre_usr ?></td>
                         <td><?= $datos->primer_apellido_usr ?></td>
-                        <td><?= $datos->segundo_apellido_usr ?></td>
+                        <td><?= $datos->segundo_apellido_usr ?></td>-->
                         <td><?= $datos->cedula_usr ?></td>
                         <td><?= $datos->telefono_usr ?></td>
                         <td><?= $datos->correo_electronico_usr ?></td>
