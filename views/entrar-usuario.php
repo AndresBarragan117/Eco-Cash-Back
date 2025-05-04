@@ -1,3 +1,6 @@
+<?php
+    include "../modelo/conexion.php"; // Asegúrate de incluir la conexión a la base de datos
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/inicio-sesion.css">
+    <link rel="stylesheet" href="../css/entrar.css">
     <link rel="icon" href="../img/titulo-logo.ico">
-    <title>Iniciar Sesión</title>
+    <title>Sesión Estudiante</title>
 </head>
 <body>
     <header class="header">
@@ -18,31 +21,33 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../index.html">Inicio</a>
-            <a class="menu" href="../index.html#nosotros">Nosotros</a>
-            <a class="menu" href="../index.html#como-paricipar">Como Participar</a>
-            <a class="menu" href="../html/registro.html">Registrarse</a>
-            <a class="menu" href="inicio-sesion.html">Iniciar Sesión</a>
+            <a class="menu" href="../views/entrar-usuario.php">Puntos</a>
+            <a class="menu" href="">Catálogo De Premios</a>
+            <a class="menu" href="">Materiales Reciclados</a>
+            <a class="menu" href="">Cambio de Contraseña</a>
+            <a class="menu" href="">Cerrar Sesión</a>
         </ul>
     </nav>
 
-    <div class="form-iniciar-sesion">
-        <form action="" class="formulario">
-        <h1 class="title-iniciar-sesion">Iniciar Sesión</h1>
-    
-        <div class="contenedor-entrada">
-            <input id="email" type="text" class="recibir" placeholder="a">
-            <label for="email" class="etiqueta">Email</label>
+    <section>
+        <div class="informacion">
+            <h2>¡Bienvenid@ Fernanda!</h2>
+            <div class="informacion-usuario">
+                <img src="../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
+                <div>
+                    <div class="puntos">
+                        <img class="icono" src="../img/icono_hoja.png" alt="icono de hoja">
+                        <h3>Puntos Acumulados:</h3>
+                        <h2>36</h2> 
+                    </div>
+                    <div class="qr">
+                        <img class="img-qr" src="../img/img-qr.png" alt="">
+                        <h3>QR Personal</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="contenedor-entrada">
-            <input id="password" type="password" class="recibir" placeholder="a">
-            <label for="password" class="etiqueta">Contraseña</label>
-        </div>
-    
-        <input id="btn-registro" type="submit" class="boton-iniciar-sesion" value="Iniciar Sesión">
-        </form>
-    </div>
+    </section>
 
     <footer class="footer">
         <section class="icono-redes">
