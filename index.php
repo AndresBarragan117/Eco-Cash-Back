@@ -18,11 +18,12 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="index.html">Inicio</a>
+            <a class="menu" href="index.php">Inicio</a>
             <a class="menu" href="#nosotros">Nosotros</a>
-            <a class="menu" href="#como-paricipar">Como Participar</a>
-            <a class="menu" href="html/registro.html">Registrarse</a>
-            <a class="menu" href="html/inicio-sesion.html">Iniciar Sesión</a>
+            <a class="menu" href="#premios">Premios</a>
+            <a class="menu" href="#como-participar">Cómo Participar</a>
+            <a class="menu" href="views/registro.php">Registrarse</a>
+            <a class="menu" href="views/inicio-sesion.php">Iniciar Sesión</a>
         </ul>
     </nav>
 
@@ -31,7 +32,7 @@
         <div class="texto-video">
             <h3>¡Únete a la Revolución Verde con Eco Cash Back!</h2>
             <p><strong>Recicla, Gana Puntos y Ayuda al Planeta</strong></p>
-            <p>Eco Cash Back es un sistema innovador que te recompensa por reciclar. Escanea tu código QR en nuestras máquinas, recicla materiales como <strong>botellas plasticas y latas</strong>, y obtén puntos canjeables por premios ecológicos.</p>
+            <p>Eco Cash Back es un sistema innovador que te recompensa por reciclar. Escanea tu código QR en nuestras máquinas, recicla materiales como <strong>botellas plásticas, latas de refrescos, pilas, cartón o vidrio</strong>, y obtén puntos canjeables por premios ecológicos.</p>
         </div>
     </section>
 
@@ -42,7 +43,7 @@
         </div>
 
         <div class="info-nosotros">
-            <p>En EcoCashBack, nos dedicamos apasionadamente a promover prácticas sostenibles y a proteger el medio ambiente para las generaciones futuras. Creemos firmemente en el poder de la colaboración y la participación comunitaria para crear un impacto positivo en nuestro entorno. Nuestra misión es proporcionar soluciones innovadoras y eficientes para optimizar los procesos de reciclaje, fomentando al mismo tiempo una mayor conciencia ambiental y un compromiso activo por parte de la comunidad.</p>
+            <p>En Eco Cash Back, nos dedicamos apasionadamente a promover prácticas sostenibles y a proteger el medio ambiente para las generaciones futuras. Creemos firmemente en el poder de la colaboración y la participación comunitaria para crear un impacto positivo en nuestro entorno. Nuestra misión es proporcionar soluciones innovadoras y eficientes para optimizar los procesos de reciclaje, fomentando al mismo tiempo una mayor conciencia ambiental y un compromiso activo por parte de la comunidad.</p>
         </div>
 
         <div>
@@ -95,7 +96,46 @@
         </div>
     </section>
 
-    <section id="como-paricipar" class="como-participar">
+    <section id="premios" class="premios">
+        <div class="icono-titulo">
+            <img class="icono" src="img/icono_premios.png" alt="">
+            <h2>Premios</h2>
+        </div>
+
+        <div class="info-premios">
+            <p>En Eco Cash Back valoramos tu compromiso con el medio ambiente y queremos recompensarte por contribuir a la sostenibilidad. Al participar activamente en nuestro sistema de reciclaje, puedes obtener los siguientes premios y beneficios:</p>
+        </div>
+
+        <div class="caja-puntos-sorteos">
+            <div class="puntos-sorteos">
+                <h3>Puntos Virtuales</h3>
+                <p>Cada vez que recicles una botellas plásticas, latas de refrescos, pilas, cartón o vidrio, ganarás puntos virtuales que podrás canjear por descuentos en tiendas locales, productos ecológicos y otras ventajas exclusivas.</p>
+            </div>
+            <div class="puntos-sorteos">
+                <h3>Sorteos y Eventos</h3>
+                <p>Participa en nuestros sorteos y eventos especiales donde podrás ganar premios adicionales, experiencias únicas y participar en actividades relacionadas con la protección del medio ambiente.</p>
+            </div>
+        </div>
+
+        <div class="caja-premios-disponibles">
+            <div class="premios-disponibles">
+                <h3>Bonos de Descuento</h3>
+                <img class="img-premios" src="img/img_premio_bono.png" alt="">
+            </div>
+            <div class="premios-disponibles">
+                <h3>Productos Tecnológicos</h3>
+                <img class="img-premios" src="img/img_premio_auricular.png" alt="">
+            </div>
+            <div class="premios-disponibles">
+                <h3>Vehículo Ecológico</h3>
+                <img class="img-premios" src="img/img_premio_scooter.png" alt="">
+            </div>
+        </div>
+
+        <p>¡Únete a nosotros en esta misión de cuidar nuestro planeta y aprovecha los beneficios de ser parte de la comunidad Eco Cash Back!</p>
+    </section>
+
+    <section id="como-participar" class="como-participar">
         <div class="icono-titulo">
             <img class="icono" src="img\icono_como_participar.png" alt="">
             <h2>Como Participar</h2>
@@ -127,18 +167,35 @@
 
         <div class="info-materiales">
             <h2>Información de Materiales</h2>
-            <p class="info-materiales-texto">Una vez registrado, utiliza nuestra interfaz amigable para identificar y clasificar tus botellas plásticas y latas de refrescos. El sistema te guiará paso a paso para asegurarse de que todo esté correctamente separado y listo para reciclar.</p>
+            <p class="info-materiales-texto">Una vez registrado, utiliza nuestra interfaz amigable para identificar y clasificar tus botellas plásticas, latas de refrescos, pilas, cartón y vidrio. El sistema te guiará paso a paso para asegurarse de que todo esté correctamente separado y listo para reciclar.</p>
         </div>
 
-        <div class="materiales">
-            <div class="botellas">
+        <div class="caja-materiales">
+            <div class="materiales">
                 <h3>Botellas Plasticas</h3>
                 <img class="img-botella-latas" src="img\img-botellas-plasticas.png" alt="">
             </div>
     
-            <div class="botellas">
+            <div class="materiales">
                 <h3>Latas de Refresco</h3>
                 <img class="img-botella-latas" src="img\img-latas.png" alt="">
+            </div>
+        </div>
+
+        <div class="caja-materiales">
+            <div class="materiales">
+                <h3>Pilas</h3>
+                <img class="img-botella-latas" src="img/img-pilas" alt="">
+            </div>
+    
+            <div class="materiales">
+                <h3>Envases de Cartón</h3>
+                <img class="img-botella-latas" src="img/img-carton.png" alt="">
+            </div>
+
+            <div class="materiales">
+                <h3>Envases de Vidrio</h3>
+                <img class="img-botella-latas" src="img/img-botellas-vidrio.png" alt="">
             </div>
         </div>
 
@@ -152,7 +209,7 @@
         
     </section>
 
-    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1527.4122482234054!2d-75.27068029734977!3d2.940257671274583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1713990045735!5m2!1ses!2sco" width="80%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1527.4122482234054!2d-75.27068029734977!3d2.940257671274583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1713990045735!5m2!1ses!2sco" width="85%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <footer class="footer">
         <section class="icono-redes">

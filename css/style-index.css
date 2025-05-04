@@ -43,8 +43,10 @@ section{
     margin: 1.5em 0em;
 }
 
+/*---------------------------------------------*/
+
 .header{
-    width: 80%;
+    width: 85%;
     height: 10em;
     display: flex;
     justify-content: center;
@@ -66,7 +68,7 @@ header .logo{
 }
 
 .nav{ 
-    width: 80%;
+    width: 85%;
     height: 4em;
     display: flex;
     justify-content: center;
@@ -81,7 +83,7 @@ header .logo{
 }
 
 .barnav{
-    width: 80%;
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,13 +123,15 @@ header .logo{
     border: 2px solid black;
 }
 
+/*---------------------------------------------*/
+
 .video{
     padding-top: 0.5em;
 }
 
 .fullscreen-video {
     width: 65%;
-    height: 65%;
+    height: 100%;
     object-fit: cover; 
     border: 2px solid #000;
     box-shadow: 4px 4px 10px #383737;
@@ -146,8 +150,10 @@ header .logo{
     padding: 1em;
 }
 
+/*---------------------------------------------*/
+
 .nosotros{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -161,7 +167,7 @@ header .logo{
 }
 
 .info-nosotros{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -194,7 +200,7 @@ header .logo{
 }
 
 .vision-mision{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -231,8 +237,87 @@ header .logo{
     margin-bottom: 1em;
 }
 
+/*---------------------------------------------*/
+
+.premios{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #ffffff;
+    border-radius: 20px;
+    opacity: 0.9;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.info-premios{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-bottom: 1em;
+}
+
+.caja-puntos-sorteos{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+.puntos-sorteos{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: #009c77 dashed 3px;
+    border-radius: 50px;
+    margin: 0em 2em;
+    padding: 0em 2em;
+}
+
+.caja-premios-disponibles{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    margin: 0 auto;
+}
+
+.premios-disponibles{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 0em 1em;
+    border: #009c77 double 10px;
+    border-radius: 50%;
+    padding: 1em;
+}
+
+.img-premios{
+    width: 10em;
+    height: 10em;
+}
+
+/*---------------------------------------------*/
+
 .como-participar{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -261,12 +346,12 @@ header .logo{
 }
 
 .info-participar{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .info-participar-texto{
@@ -294,7 +379,7 @@ header .logo{
 }
 
 .info-registro-deposito{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -305,7 +390,7 @@ header .logo{
 }
 
 .info-materiales{
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -315,7 +400,7 @@ header .logo{
 }
 
 .info-materiales-texto{
-    width: 80%;
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,29 +409,33 @@ header .logo{
     text-align: center;
 }
 
-.materiales{
+.caja-materiales{
+    width: 85%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row; 
-    margin-top: 1em;
+    margin: 1em 0em;
 }
 
-.botellas{
+.materiales{
+    width: 20%;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    margin: 0em 2em;
+    margin: 0em 1em;
     border: #009c77 dotted 5px;
-    border-radius: 15em;
-    padding: 2em;
+    border-radius: 50%;
+    padding: 2em 2em;
+    align-self: flex-start;
 }
 
 .img-botella-latas{
-    width: 25em;
-    height: 20em;
-    border-radius: 40%;
+    width: 60%;
+    height: 50%;
 }
 
 .info-recompensas{
@@ -363,11 +452,15 @@ header .logo{
     transition: background-color 0.5s;
 }
 
+/*---------------------------------------------*/
+
 .mapa{
     margin: 0 auto;
     border-radius: 15px;
     margin-bottom: 1.5em;
 }
+
+/*---------------------------------------------*/
 
 .footer {
     line-height: 1.5;
