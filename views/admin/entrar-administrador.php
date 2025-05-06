@@ -1,6 +1,11 @@
 <?php
-    include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
     session_start(); // Iniciar la sesión
+
+    if (!isset($_SESSION['primer_nombre_usr']) || !isset($_SESSION['primer_apellido_usr'])) {
+        header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -11,27 +16,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../css/entrar-admin.css">
-    <link rel="icon" href="../img/titulo-logo.ico">
+    <link rel="stylesheet" href="../../css/entrar-admin.css">
+    <link rel="icon" href="../../img/titulo-logo.ico">
     <title>Sesión Administrador</title>
 </head>
 <body>
     <header class="header">
-        <img class="logo" src="../img/titulo-logo.png" alt="">
+        <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
     </header>
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../views/entrar-administrador.php">Usuarios</a>
-            <a class="menu" href="">Catálogo De Premios</a>
+            <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
+            <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
-            <a class="menu" href="../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
+            <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
 
     <section>
+        <h1>Bienveni@ Admin <?= $_SESSION['primer_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ?></h1>
         <h1>Lista de Usuarios</h1>
         
         <script type="text/javascript">
@@ -85,7 +91,7 @@
                         <td><?= $datos->puntos_acumulados_usr ?></td>
                         <td>
                             <a href="modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>">Actualizar</a>
-                            <a href="../controlador/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" onclick="return confirmar()">Borrar</a>
+                            <a href="../../controlador/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" onclick="return confirmar()">Borrar</a>
                         </td>
                     </tr>    
                 <?php 

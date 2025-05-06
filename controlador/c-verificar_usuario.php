@@ -4,7 +4,12 @@
     
     if(!empty($_POST['btn-iniciar-sesion'])){
         if(empty($_POST['email']) || empty($_POST['password'])){
-            echo "<script>alert('Por favor, completa todos los campos.');</script>";
+            // Si los campos de email o contraseña están vacíos, redirigir a la página de inicio de sesión con un mensaje de error
+            echo "<script>
+                    alert('Por favor, completa todos los campos.');
+                    window.location.href = '../views/inicio-sesion.php';
+                </script>";
+            exit();
         }else{
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -23,12 +28,15 @@
                     header("Location: ../views/entrar-usuario.php");
                     exit();
                 } elseif ($datos->rol_usr === 'administrador') {
-                    header("Location: ../views/entrar-administrador.php");
+                    header("Location: ../views/admin/entrar-administrador.php");
                     exit();
                 }
             } else {
-                echo "<script>alert('Usuario o contraseña incorrectos.');</script>";
-                header("Location: ../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión
+                // Si no se encuentra el usuario, redirigir a la página de inicio de sesión con un mensaje de error
+                echo "<script>
+                        alert('Usuario o contraseña incorrectos.');
+                        window.location.href = '../views/inicio-sesion.php';
+                    </script>";
                 exit();
             }
         }

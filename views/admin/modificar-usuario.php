@@ -1,8 +1,8 @@
 <?php
     $id_usuario = $_GET['id']; // Obtener el ID del usuario desde la URL
     
-    include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include "../controlador/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
+    include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
+    include "../../controlador/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
 
     $consulta = "SELECT * FROM usuarios WHERE id_usuario_usr = $id_usuario"; // Consulta para obtener los datos del usuario
     $resultado = $conn->query($consulta); // Ejecutar la consulta
@@ -16,23 +16,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/modificar-usuario.css">
-    <link rel="icon" href="../img/titulo-logo.ico">
+    <link rel="stylesheet" href="../../css/modificar-usuario.css">
+    <link rel="icon" href="../../img/titulo-logo.ico">
     <title>Actualizar Usuario</title>
 </head>
 <body>
     <header class="header">
-        <img class="logo" src="../img/titulo-logo.png" alt="">
+        <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
     </header>
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../views/entrar-administrador.php">Usuarios</a>
-            <a class="menu" href="">Catálogo De Premios</a>
+            <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
+            <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
-            <a class="menu" href="">Cerrar Sesión</a>
+            <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
     

@@ -1,4 +1,6 @@
 <?php
+    include_once "../../modelo/conexion.php";
+    
     if (!empty($_POST["btn-registrarse"])){
         if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["segundo_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["segundo_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])){
             
