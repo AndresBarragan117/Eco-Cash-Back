@@ -39,7 +39,7 @@
         <div class="informacion">
             <h2>¡Bienvenid@ <?=  $_SESSION['primer_nombre_usr'] ." ". $_SESSION['segundo_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ." ". $_SESSION['segundo_apellido_usr'] ?>!</h2>
             <div class="informacion-usuario">
-                <img src="../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
+                <img src="../../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
                 <div>
                     <div class="puntos">
                         <img class="icono" src="../../img/icono_hoja.png" alt="icono de hoja">

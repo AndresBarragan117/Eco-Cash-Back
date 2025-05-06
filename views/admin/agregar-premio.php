@@ -13,6 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/admin/agregar-premio.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>Sesión Administrador</title>
 </head>
 <body>
@@ -22,9 +23,9 @@
     </header>
 
     <nav class="nav">
-        <ul class="barnav">
-            <a class="menu" href="../../views/entrar-administrador.php">Usuarios</a>
-            <a class="menu" href="catalogo.php">Catálogo De Premios</a>
+    <ul class="barnav">
+            <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
+            <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
@@ -41,7 +42,7 @@
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="descripcion_rec" name="descripcion_rec" class="recibir" placeholder="a">
+                <textarea type="text" id="descripcion_rec" name="descripcion_rec" class="recibir" placeholder="a"></textarea>
                 <label for="descripcion_rec" class="etiqueta">Descripcion del Premio</label>
             </div>
 

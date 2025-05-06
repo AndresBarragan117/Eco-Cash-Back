@@ -18,6 +18,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/entrar-admin.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>Sesión Administrador</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
         </ul>
     </nav>
 
-    <section>
+    <section class="caja-usuario">
         <h1>Bienveni@ Admin <?= $_SESSION['primer_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ?></h1>
         <h1>Lista de Usuarios</h1>
         
@@ -46,9 +47,9 @@
             }
         </script>
 
-        <table border="1" cellspacing="0" cellpadding="5">
+        <table class="table">
             <thead>
-                <tr>
+                <tr class="bg-primary">
                     <th>ID</th>
                     <th>Nombres Completos de Usuarios</th>
                     <!--<th>Segundo Nombre</th>

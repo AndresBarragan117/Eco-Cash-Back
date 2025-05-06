@@ -13,6 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/catalogo-admin.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title>Catálogo Administrador</title>
 </head>
 <body>
@@ -31,15 +32,15 @@
         </ul>
     </nav>
 
-    <section class="catalogo">
+    <section class="caja-catalogo">
         <h1>Catálogo de Premios</h1>
         <div class="caja-boton">
             <a class="btn-ingresar" href="../../views/admin/agregar-premio.php">Ingresar Premio</a>
         </div>
         <div class="premios">
-            <table border="1" cellspacing="0" cellpadding="5">
+            <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="bg-primary">
                         <th>ID</th>
                         <th>Nombre del Premio</th>
                         <th>Descripción</th>

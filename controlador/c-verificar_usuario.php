@@ -25,7 +25,7 @@
                 $_SESSION['puntos_acumulados_usr'] = $datos->puntos_acumulados_usr; // Guardar los puntos acumulados en la sesión
 
                 if ($datos->rol_usr === 'estudiante') {
-                    header("Location: ../views/entrar-usuario.php");
+                    header("Location: ../views/usuario/entrar-usuario.php");
                     exit();
                 } elseif ($datos->rol_usr === 'administrador') {
                     header("Location: ../views/admin/entrar-administrador.php");

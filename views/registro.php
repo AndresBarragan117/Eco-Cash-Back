@@ -1,6 +1,6 @@
 <?php
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include_once('../controlador/c-registro-usuario.php'); // Incluir el archivo de controlador para registro de usuario
+    include "../controlador/c-registro-usuario.php"; // Incluir el archivo de controlador para registro de usuario
 ?>
 
 <!DOCTYPE html>
@@ -58,12 +58,12 @@
 
             <div class="contenedor-entrada">
                 <input type="tel" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a" required>
-                <label for="telefono_usr" class="etiqueta">Telefono</label>
+                <label for="telefono_usr" class="etiqueta">Teléfono</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a" required>
-                <label for="cedula_usr" class="etiqueta">Cedula</label>
+                <label for="cedula_usr" class="etiqueta">Cédula</label>
             </div>
 
             <div class="contenedor-entrada">

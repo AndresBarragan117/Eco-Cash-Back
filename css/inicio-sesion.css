@@ -76,7 +76,6 @@ header .logo{
 }
 
 .menu a{
-    text-decoration: none;
     color: black;
 }
 
@@ -88,6 +87,7 @@ header .logo{
     transform: scale(1.05);
     transition: all 0.3s ease;
     border: 2px solid black;
+    text-decoration: none;
 }
 
 .form-iniciar-sesion {
@@ -115,6 +115,7 @@ header .logo{
 }
 
 .formulario .title-iniciar-sesion {
+    color: black;
     font-size: 50px;
     margin-top: 15px;
     margin-bottom: 30px;
@@ -176,7 +177,7 @@ header .logo{
     left: 15px;
     padding: 0 4px;
     background-color: white;
-    color: black;
+    /*color: black;*/
     font-size: 16px;
     transition: 0.5s;
     z-index: 0;
