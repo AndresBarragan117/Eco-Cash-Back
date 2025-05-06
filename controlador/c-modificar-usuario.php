@@ -18,7 +18,7 @@
             $actualizar_usuario = "UPDATE usuarios SET primer_nombre_usr='$primer_nombre_usr', segundo_nombre_usr='$segundo_nombre_usr', primer_apellido_usr='$primer_apellido_usr', segundo_apellido_usr='$segundo_apellido_usr', telefono_usr='$telefono_usr', cedula_usr='$cedula_usr', correo_electronico_usr='$correo_electronico_usr', contrasena_hash_usr='$contrasena_hash_usr', rol_usr='$rol_usr', estado_cuenta_usr='$estado_cuenta_usr', puntos_acumulados_usr=$puntos_acumulados_usr WHERE id_usuario_usr=$id_usuario_usr";
 
             if ($conn->query($actualizar_usuario) === TRUE) {
-                header("Location: ../views/entrar-administrador.php"); // Redirigir a la página de administración
+                header("Location: ../../views/entrar-administrador.php"); // Redirigir a la página de administración
             } else {
                 echo "<span style='color: red;'>Error: " . $actualizar_usuario . "<br>" . $conn->error . "</span>";
             }

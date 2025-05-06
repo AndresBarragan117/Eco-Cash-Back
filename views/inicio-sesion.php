@@ -1,6 +1,6 @@
 <?php
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include "../controlador/c-verificar_usuario.php"; // Incluir el archivo de verificación de usuario
+    //include "../controlador/c-verificar_usuario.php"; // Incluir el archivo de verificación de usuario
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
     </nav>
 
     <div class="form-iniciar-sesion">
-        <form action="" method="POST" class="formulario">
+        <form action="../controlador/c-verificar_usuario.php" method="POST" class="formulario">
             <h1 class="title-iniciar-sesion">Iniciar Sesión</h1>
         
             <div class="contenedor-entrada">
