@@ -19,9 +19,7 @@
 
             if($datos = $verificar->fetch_object()){
                 $_SESSION['primer_nombre_usr'] = $datos->primer_nombre_usr; // Guardar el primer nombre en la sesión
-                $_SESSION['segundo_nombre_usr'] = $datos->segundo_nombre_usr; // Guardar el segundo nombre en la sesión
                 $_SESSION['primer_apellido_usr'] = $datos->primer_apellido_usr; // Guardar el primer apellido en la sesión
-                $_SESSION['segundo_apellido_usr'] = $datos->segundo_apellido_usr; // Guardar el segundo apellido en la sesión
                 $_SESSION['puntos_acumulados_usr'] = $datos->puntos_acumulados_usr; // Guardar los puntos acumulados en la sesión
 
                 if ($datos->rol_usr === 'estudiante') {

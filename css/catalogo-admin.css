@@ -90,7 +90,7 @@ header .logo{
 
 .menu{
     width: 20%;
-    height: 3.5em;
+    height: 3em;
     display: flex;
     flex-direction: row;
     justify-content: center;

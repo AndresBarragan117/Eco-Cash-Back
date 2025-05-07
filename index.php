@@ -8,9 +8,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style-index.css">
     <link rel="icon" href="img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Eco Cash Back</title>
 </head>
 <body>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+    
     <header class="header">
         <img class="logo" src="img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
@@ -39,7 +44,7 @@
     <section id="nosotros" class="nosotros">
         <div class="icono-titulo">
             <img class="icono" src="img/icono_nosotros.png" alt="">
-            <h2>Nosotros</h2>
+            <h1>Nosotros</h1>
         </div>
 
         <div class="info-nosotros">
@@ -99,7 +104,7 @@
     <section id="premios" class="premios">
         <div class="icono-titulo">
             <img class="icono" src="img/icono_premios.png" alt="">
-            <h2>Premios</h2>
+            <h1>Premios</h1>
         </div>
 
         <div class="info-premios">
@@ -138,7 +143,7 @@
     <section id="como-participar" class="como-participar">
         <div class="icono-titulo">
             <img class="icono" src="img\icono_como_participar.png" alt="">
-            <h2>Como Participar</h2>
+            <h1>Como Participar</h1>
         </div>
 
         <div class="info-participar">
@@ -205,7 +210,7 @@
             <p>¡Comparte tu Éxito! No olvides compartir tus logros y animar a otros a unirse a la causa. Cuantos más seamos, mayor será el impacto positivo que podamos generar en nuestro entorno y en el mundo en general.</p>
         </div>
 
-        <a href="html/registro.html" class="menu boton-registro">¡REGISTRARSE!</a>
+        <a href="views/registro.php" class="menu boton-registro">¡REGISTRARSE!</a>
         
     </section>
 

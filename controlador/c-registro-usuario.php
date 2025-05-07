@@ -2,12 +2,12 @@
     include_once "../modelo/conexion.php";
     
     if (!empty($_POST["btn-registrarse"])){
-        if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["segundo_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["segundo_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])){
+        if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])){
             
             $primer_nombre_usr = $_POST["primer_nombre_usr"];
-            $segundo_nombre_usr = $_POST["segundo_nombre_usr"];
+            $segundo_nombre_usr = !empty($_POST["segundo_nombre_usr"]) ? $_POST["segundo_nombre_usr"] : NULL;
             $primer_apellido_usr = $_POST["primer_apellido_usr"];
-            $segundo_apellido_usr = $_POST["segundo_apellido_usr"];
+            $segundo_apellido_usr = !empty($_POST["segundo_apellido_usr"]) ? $_POST["segundo_apellido_usr"] : NULL;
             $telefono_usr = $_POST["telefono_usr"];
             $cedula_usr = $_POST["cedula_usr"];
             $correo_electronico_usr = $_POST["correo_electronico_usr"];
@@ -19,7 +19,7 @@
             $puntos_acumulados_usr = 0;
 
             $insertar_usuario = "INSERT INTO usuarios (primer_nombre_usr, segundo_nombre_usr, primer_apellido_usr, segundo_apellido_usr, telefono_usr, cedula_usr, correo_electronico_usr, contrasena_hash_usr, codigo_qr_usr, fecha_registro_usr, rol_usr, estado_cuenta_usr, puntos_acumulados_usr) 
-            VALUES ('$primer_nombre_usr', '$segundo_nombre_usr', '$primer_apellido_usr', '$segundo_apellido_usr', '$telefono_usr', '$cedula_usr', '$correo_electronico_usr', '$contrasena_hash_usr', '$codigo_qr_usr', '$fecha_registro_usr', '$rol_usr', '$estado_cuenta_usr', $puntos_acumulados_usr)";
+            VALUES ('$primer_nombre_usr', " . ($segundo_nombre_usr ? "'$segundo_nombre_usr'" : "NULL") . ", '$primer_apellido_usr', " . ($segundo_apellido_usr ? "'$segundo_apellido_usr'" : "NULL") . ", '$telefono_usr', '$cedula_usr', '$correo_electronico_usr', '$contrasena_hash_usr', '$codigo_qr_usr', '$fecha_registro_usr', '$rol_usr', '$estado_cuenta_usr', $puntos_acumulados_usr)";
 
             if ($conn->query($insertar_usuario) === TRUE) {
                 echo "<script>
@@ -34,7 +34,7 @@
             }
         } else {
             echo "<script>
-                    alert('Error: Todos los campos son obligatorios.');
+                    alert('Error: Todos los campos obligatorios excepto segundo nombre y segundo apellido.');
                     window.history.back();
                   </script>";
         }

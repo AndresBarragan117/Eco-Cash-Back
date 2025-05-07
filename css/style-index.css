@@ -10,6 +10,7 @@ body {
 
 h1{
     text-align: center;
+    font-size: 3em;
 }
 
 h2{
@@ -89,6 +90,7 @@ header .logo{
     align-items: center;
     border-radius: 20px;
     padding: 0;
+    margin-top: 8px;
 }
 
 .menu{
@@ -130,7 +132,7 @@ header .logo{
 }
 
 .fullscreen-video {
-    width: 65%;
+    width: 62%;
     height: 100%;
     object-fit: cover; 
     border: 2px solid #000;
@@ -140,14 +142,14 @@ header .logo{
 
 .texto-video{
     position: absolute;
-    width: 30%;
-    height: 28%;
+    width: 35%;
+    height: 30%;
     top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: inset 0 0 5em 9em rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-    padding: 1em;
+    padding: 2em;
 }
 
 /*---------------------------------------------*/
@@ -297,7 +299,7 @@ header .logo{
 }
 
 .premios-disponibles{
-    width: 20%;
+    width: 22%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -306,7 +308,7 @@ header .logo{
     margin: 0em 1em;
     border: #009c77 double 10px;
     border-radius: 50%;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 .img-premios{
