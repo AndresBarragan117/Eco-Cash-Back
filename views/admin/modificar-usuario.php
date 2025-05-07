@@ -1,6 +1,6 @@
 <?php
     include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include "../../controlador/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
+    include "../../controlador/admin/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
     
     $id_usuario = $_GET['id']; // Obtener el ID del usuario desde la URL
     $consulta = "SELECT * FROM usuarios WHERE id_usuario_usr = $id_usuario"; // Consulta para obtener los datos del usuario

@@ -114,7 +114,7 @@
                     <td>
                         <?php
                         if ($datos->estado_cuenta_usr === 'activo') {
-                            echo '<i class="fa-solid fa-circle-check" title="Activo"></i>';
+                            echo '<i class="fa-solid fa-user-check" title="Activo"></i>';
                         } elseif ($datos->estado_cuenta_usr === 'inactivo') {
                             echo '<i class="fa-solid fa-circle-xmark" title="Inactivo"></i>';
                         } elseif ($datos->estado_cuenta_usr === 'suspendido') {
@@ -125,7 +125,7 @@
                     <td><?= $datos->puntos_acumulados_usr ?></td>
                     <td>
                         <a class="btn btn-warning" href="modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="../../controlador/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Eliminar" onclick="return confirmar()"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-danger" href="../../controlador/admin/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Eliminar" onclick="return confirmar()"><i class="fa-solid fa-trash"></i></a>
                     </td>
                     </tr>    
                 <?php 
