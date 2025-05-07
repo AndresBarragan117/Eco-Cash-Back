@@ -32,7 +32,7 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../../views/entrar-usuario.php">Puntos</a>
+            <a class="menu" href="../../views/usuario/entrar-usuario.php">Puntos</a>
             <a class="menu" href="">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>

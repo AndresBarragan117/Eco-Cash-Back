@@ -113,14 +113,14 @@ header .logo{
     background-color: #009c77;
     color: black;
     font-weight: bold;
-    box-shadow: 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 10px rgba(0, 0, 0, 0.1);*/
     transform: scale(1.05);
     transition: all 0.3s ease;
     border: 2px solid black;
     text-decoration: none;
 }
 
-/*------------------------------------------*/
+/*---------------------------------------------*/
 
 .caja-catalogo{
     width: 85%;
@@ -135,6 +135,7 @@ header .logo{
 
 .caja-boton{
     height: 3em;
+    width: 85%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -174,7 +175,7 @@ header .logo{
     text-decoration: none;
 }
 
-/*------------------------------------------*/
+/*---------------------------------------------*/
 
 .footer {
     line-height: 1.5;
@@ -199,6 +200,7 @@ header .logo{
 
 .avisos a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .derechos {

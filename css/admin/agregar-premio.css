@@ -42,10 +42,6 @@ section{
     margin: 1.5em 0em;
 }
 
-a{
-    font-weight: bold;
-}
-
 .header{
     width: 85%;
     height: 10em;
@@ -90,11 +86,12 @@ header .logo{
     align-items: center;
     border-radius: 20px;
     padding: 0;
+    margin-top: 8px;
 }
 
 .menu{
     width: 20%;
-    height: 3.5em;
+    height: 3em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -117,12 +114,14 @@ header .logo{
     background-color: #009c77;
     color: black;
     font-weight: bold;
-    box-shadow: 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 10px rgba(0, 0, 0, 0.1);*/
     transform: scale(1.05);
     transition: all 0.3s ease;
     border: 2px solid black;
     text-decoration: none;
 }
+
+/*---------------------------------------------*/
 
 .form-resgistro {
     display: flex;
@@ -237,6 +236,8 @@ header .logo{
     transition: all 0.3s ease;
 }
 
+/*---------------------------------------------*/
+
 .footer {
     line-height: 1.5;
     background-color: #505050;
@@ -253,15 +254,26 @@ header .logo{
     flex-direction: column;
     gap: 10px; 
     margin-bottom: 10px;
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
 }
 
 .avisos a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .derechos {
     margin-top: auto; 
 }
+
+.icono-redes{
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
+}
+
 .redes-sociales{
     margin-bottom: 10px;
 }

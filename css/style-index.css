@@ -13,15 +13,14 @@ h1{
     font-size: 3em;
 }
 
-h2{
+.titulo-h2{
     text-align: center;
-    font-size: 2.5em;
+    margin: 1em 0em 1em 0em;
 }
 
-h3{
+.titulo-h3{
     text-align: center;
-    font-size: 2em;
-    margin: 15px 0 20px 0;
+    margin: 0.5em 0.2em 1em 0.2em;
 }
 
 a{
@@ -142,14 +141,14 @@ header .logo{
 
 .texto-video{
     position: absolute;
-    width: 35%;
-    height: 30%;
+    width: 28%;
+    height: 40%;
     top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: inset 0 0 5em 9em rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-    padding: 2em;
+    padding: 2.5em;
 }
 
 /*---------------------------------------------*/
@@ -169,7 +168,7 @@ header .logo{
 }
 
 .info-nosotros{
-    width: 85%;
+    width: 70%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -208,7 +207,7 @@ header .logo{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 1em 0em;
+    margin-bottom: 1em;
 }
 
 .vision-mision-texto{
@@ -256,7 +255,7 @@ header .logo{
 }
 
 .info-premios{
-    width: 85%;
+    width: 70%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -265,12 +264,12 @@ header .logo{
     margin-bottom: 1em;
 }
 
-.caja-puntos-sorteos{
+.caja-puntos-sorteos {
     width: 85%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Aligns items at the top */
     flex-direction: row;
     margin-bottom: 2em;
 }
@@ -284,7 +283,7 @@ header .logo{
     flex-direction: column;
     border: #009c77 dashed 3px;
     border-radius: 50px;
-    margin: 0em 2em;
+    margin: 0em 2.5em;
     padding: 0em 2em;
 }
 
@@ -298,17 +297,18 @@ header .logo{
     margin: 0 auto;
 }
 
-.premios-disponibles{
-    width: 22%;
-    height: 100%;
+.premios-disponibles {
+    width: 330px; /* Set a fixed width */
+    height: 330px; /* Set the same height as width for a perfect circle */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 0em 1em;
     border: #009c77 double 10px;
-    border-radius: 50%;
-    padding: 1.5em;
+    border-radius: 50%; /* Ensures the element is a perfect circle */
+    padding: 2em;
+    box-sizing: border-box; /* Includes border and padding in the element's dimensions */
 }
 
 .img-premios{
@@ -371,12 +371,12 @@ header .logo{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns items at the top */
     align-items: center;
     flex-direction: column;
     border: #009c77 solid 2px;
     border-radius: 50px;
-    margin: 0em 2em;
+    margin: 0em 2.5em;
     padding-bottom: 1em;
 }
 
@@ -387,7 +387,7 @@ header .logo{
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    margin: 0em 2em;
+    margin: 0em 0.5em;
     text-align: center;
 }
 
@@ -487,6 +487,7 @@ header .logo{
 
 .avisos a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .derechos {
