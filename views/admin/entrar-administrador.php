@@ -29,7 +29,7 @@
 </head>
 <body>
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></script>
     <!-- data tables -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" integrity="sha384-VFQrHzqBh5qiJIU0uGU5CIW3+OWpdGGJM9LBnGbuIH2mkICcFZ7lPd/AAtI7SNf7" crossorigin="anonymous"></script>
@@ -71,7 +71,7 @@
         </script>
 
         <table id="example" class="table table-striped table-bordered" style="width:100%">
-            <thead style="background-color: blue; color: white;">
+            <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombres Completos de Usuarios</th>
@@ -124,8 +124,8 @@
                     </td>
                     <td><?= $datos->puntos_acumulados_usr ?></td>
                     <td>
-                        <a class="btn btn-warning" href="modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="../../controlador/admin/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Eliminar" onclick="return confirmar()"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-warning btn-sm" href="../../views/admin/modificar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger btn-sm" href="../../controlador/admin/c-eliminar-usuario.php?id=<?= $datos->id_usuario_usr ?>" title="Eliminar" onclick="return confirmar()"><i class="fa-solid fa-trash"></i></a>
                     </td>
                     </tr>    
                 <?php 

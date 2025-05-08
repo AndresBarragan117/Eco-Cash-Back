@@ -37,7 +37,7 @@
     </nav>
 
     <div class="form-resgistro">
-        <form action="../../controlador/admin/c-registro-premio.php" method="POST" class="formulario">
+    <form action="../../controlador/admin/c-registro-premio.php" method="POST" class="formulario" enctype="multipart/form-data">
             <h1 class="title-registro">Agregar Premio</h1>
 
             <div class="contenedor-entrada">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="contenedor-entrada">
-                <textarea type="text" id="descripcion_rec" name="descripcion_rec" class="recibir" placeholder="a"></textarea>
+                <input type="text" id="descripcion_rec" name="descripcion_rec" class="recibir" placeholder="a">
                 <label for="descripcion_rec" class="etiqueta">Descripcion del Premio</label>
             </div>
 
@@ -79,8 +79,12 @@
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="imagen_rec" name="imagen_rec" class="recibir" placeholder="a" required>
-                <label for="imagen_rec" class="etiqueta">Imagen Premio</label>
+                <label for="imagen_rec">Imagen del Premio</label>
+                <input type="file" id="imagen_rec" name="imagen_rec" accept="image/*">
+                <?php if (isset($datos->imagen_rec) && !empty($datos->imagen_rec)): ?>
+                    <img src="../../img/img-catalogo/<?= htmlspecialchars($datos->imagen_rec, ENT_QUOTES, 'UTF-8') ?>" alt="Imagen actual" width="100">
+                    <input type="hidden" name="imagen_actual" value="<?= htmlspecialchars($datos->imagen_rec, ENT_QUOTES, 'UTF-8') ?>"> <!-- Campo oculto para la imagen actual -->
+                <?php endif; ?>
             </div>
                 
             <input id="btn-ingresar" name="btn-ingresar" type="submit" class="boton-registro" value="agregar premio">

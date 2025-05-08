@@ -53,6 +53,7 @@ section{
     background-color: rgb(255, 255, 255);
     border-radius: 20px 20px 0px 0px;
     margin: 0 auto;
+    margin-top: 1em;
 }
 
 header .logo{
@@ -86,6 +87,7 @@ header .logo{
     align-items: center;
     border-radius: 20px;
     padding: 0;
+    margin-top: 8px;
 }
 
 .menu{
@@ -128,23 +130,25 @@ header .logo{
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     margin: 1em auto;
-    padding: 0em 1em;
+    padding-top: 1.5em;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     opacity: 0.9;
 }
 
 .caja-boton{
     height: 3em;
-    width: 85%;
+    width: 70%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* Cambiado a flex-end para alinear al lado derecho */
     align-items: center;
     padding-bottom: 1em;
     margin: 0 auto;
+    position: absolute;
+    top: 21em;
 }
 
 .btn-ingresar{
-    width: 10%;
+    width: 12%;
     height: 3em;
     display: flex;
     flex-direction: row;
@@ -173,6 +177,15 @@ header .logo{
     transition: all 0.3s ease;
     border: 2px solid black;
     text-decoration: none;
+}
+
+.premios{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 1.5em 0em;
 }
 
 /*---------------------------------------------*/

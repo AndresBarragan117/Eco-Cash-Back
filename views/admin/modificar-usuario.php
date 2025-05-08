@@ -17,6 +17,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/modificar-usuario.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Actualizar Usuario</title>
 </head>
 <body>
@@ -80,7 +82,7 @@
                     </div>
 
                     <div class="contenedor-entrada">
-                        <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required value="<?= $datos->contrasena_hash_usr ?>">
+                        <input type="text" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required value="<?= $datos->contrasena_hash_usr ?>">
                         <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
                     </div>
                     

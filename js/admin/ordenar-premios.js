@@ -8,22 +8,7 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Exportar a Excel', // Tooltip al pasar el mouse
                 className: 'btn btn-success', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(8)):not(:nth-child(9))', // Excluir la columna 9 (Acciones)
                 }
             },
             {
@@ -32,22 +17,7 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Exportar a PDF', // Tooltip al pasar el mouse
                 className: 'btn btn-danger', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(8)):not(:nth-child(9))', // Excluir la columna 9 (Acciones)
                 }
             },
             {
@@ -56,40 +26,21 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Imprimir', // Tooltip al pasar el mouse
                 className: 'btn btn-info', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(8)):not(:nth-child(9))', // Excluir la columna 9 (Acciones)
                 }
             }
         ], // Definir los botones para exportar
         lengthMenu: [5, 10, 15, 20, 25, 50], // Opciones de longitud de página
         columnDefs: [ // Definiciones de columnas
-            { orderable: false, targets: [2, 3, 4, 5, 6, 9, 10, 11] }, // desactivar ordenación en columnas específicas
-            { searchable: false, targets: [0, 3, 4, 5, 6, 7, 10, 11] }, // desactivar búsqueda en columnas específicas
-            { width: "4%", targets: [0] }, // establecer ancho de columna id 
-            { width: "20%", targets: [1] }, // establecer ancho de columna nombre
-            { width: "8%", targets: [2, 3] }, // establecer ancho de columna cedula y columna telefono
-            { width: "10%", targets: [4] }, // establecer ancho de columna correo
-            { width: "5%", targets: [5, 6] }, // establecer ancho de columna contraseña y columna QR
-            { width: "7%", targets: [7] }, // establecer ancho de columna fecha de registro
-            { width: "8%", targets: [8] }, // establecer ancho de columna rol
-            { width: "5%", targets: [9, 10] }, // establecer ancho de columna estado y columna puntos
-            { width: "6%", targets: [11] }  // establecer ancho de columna acciones
+            { orderable: false, targets: [2, 5, 7, 8] }, // Deshabilitar ordenamiento en columnas específicas
+            { searchable: false, targets: [0, 4, 7, 8] }, // Deshabilitar búsqueda en columnas específicas
+            { width: "4%", targets: [0, ] }, // Ancho de la primera columna id
+            { width: "20%", targets: [1, 2] }, // Ancho de la segunda columna nombre y tercera columna descripción
+            { width: "10%", targets: [3, 4, 5, 6] }, // Ancho de la cuarta columna costo puntos, quinta columna stock, sexta columna tipo premio y séptima columna estado
+            { width: "15%", targets: [7] }, // Ancho de la octava columna imagen
+            { width: "15%", targets: [8] }, // Ancho de la novena columna acciones
         ],
-        pageLength: 8, // Número de filas por página
+        pageLength: 6, // Número de filas por página
         language: { // Configuración de idioma
             "processing": "Procesando...",
             "lengthMenu": "Mostrar _MENU_ registros",
