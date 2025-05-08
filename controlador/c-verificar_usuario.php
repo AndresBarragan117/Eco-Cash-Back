@@ -18,9 +18,10 @@
             $verificar = $conn->query("SELECT * FROM usuarios WHERE correo_electronico_usr = '$email' AND contrasena_hash_usr = '$password' AND rol_usr = '$user_type'");
 
             if($datos = $verificar->fetch_object()){
-                $_SESSION['primer_nombre_usr'] = $datos->primer_nombre_usr; // Guardar el primer nombre en la sesión
-                $_SESSION['primer_apellido_usr'] = $datos->primer_apellido_usr; // Guardar el primer apellido en la sesión
-                $_SESSION['puntos_acumulados_usr'] = $datos->puntos_acumulados_usr; // Guardar los puntos acumulados en la sesión
+                $_SESSION['primer_nombre_usr'] = $datos->primer_nombre_usr;
+                $_SESSION['primer_apellido_usr'] = $datos->primer_apellido_usr;
+                $_SESSION['puntos_acumulados_usr'] = $datos->puntos_acumulados_usr;
+                $_SESSION['codigo_qr_usr'] = $datos->codigo_qr_usr; // Guardar el QR en la sesión
 
                 if ($datos->rol_usr === 'estudiante') {
                     header("Location: ../views/usuario/entrar-usuario.php");
