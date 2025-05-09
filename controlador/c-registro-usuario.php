@@ -3,8 +3,17 @@ include_once "../modelo/conexion.php";
 require_once "../librerias/phpqrcode/qrlib.php"; // Incluir la librería QR
 
 if (!empty($_POST["btn-registrarse"])) {
-    if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"])) {
+    if (!empty($_POST["primer_nombre_usr"]) && !empty($_POST["primer_apellido_usr"]) && !empty($_POST["telefono_usr"]) && !empty($_POST["cedula_usr"]) && !empty($_POST["correo_electronico_usr"]) && !empty($_POST["contrasena_hash_usr"]) && !empty($_POST["confirmar_contrasena_usr"])) {
         
+        // Verificar que las contraseñas coincidan
+        if ($_POST["contrasena_hash_usr"] !== $_POST["confirmar_contrasena_usr"]) {
+            echo "<script>
+                    alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+                    window.history.back();
+                  </script>";
+            exit();
+        }
+
         // Datos del formulario
         $primer_nombre_usr = $_POST["primer_nombre_usr"];
         $segundo_nombre_usr = !empty($_POST["segundo_nombre_usr"]) ? $_POST["segundo_nombre_usr"] : NULL;
@@ -13,6 +22,7 @@ if (!empty($_POST["btn-registrarse"])) {
         $telefono_usr = $_POST["telefono_usr"];
         $cedula_usr = $_POST["cedula_usr"];
         $correo_electronico_usr = $_POST["correo_electronico_usr"];
+        /* $contrasena_hash_usr = password_hash($_POST["contrasena_hash_usr"], PASSWORD_DEFAULT); // Encriptar la contraseña */
         $contrasena_hash_usr = $_POST["contrasena_hash_usr"];
         $fecha_registro_usr = date("Y-m-d H:i:s");
         $rol_usr = "estudiante";

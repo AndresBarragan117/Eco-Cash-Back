@@ -18,9 +18,6 @@
     <title>Registrarse</title>
 </head>
 <body>
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <header class="header">
         <img class="logo" src="../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
@@ -79,6 +76,11 @@
             <div class="contenedor-entrada">
                 <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required>
                 <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
+            </div>
+
+            <div class="contenedor-entrada">
+                <input type="password" id="confirmar_contrasena_usr" name="confirmar_contrasena_usr" class="recibir" placeholder="a" minlength="8" required>
+                <label for="confirmar_contrasena_usr" class="etiqueta">Confirmar Contraseña</label>
             </div>
             
             <input id="btn-registro" name="btn-registrarse" type="submit" class="boton-registro" value="Registrarse">

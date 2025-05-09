@@ -124,7 +124,7 @@
 
         <div class="caja-premios-disponibles">
             <div class="premios-disponibles">
-                <h3 class="titulo-h3">Bonos de Descuento</h3>
+                <h3 class="titulo-h3">Cupones de Descuento</h3>
                 <img class="img-premios" src="img/img_premio_bono.png" alt="">
             </div>
             <div class="premios-disponibles">
