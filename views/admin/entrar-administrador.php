@@ -54,15 +54,14 @@
         <ul class="barnav">
             <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
             <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
-            <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
 
     <section class="caja-usuario">
-        <h1>Bienveni@ Admin <?= $_SESSION['primer_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ?></h1>
-        <h1>Lista de Usuarios</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif;">Bienveni@ Admin <?= $_SESSION['primer_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ?></h1>
+        <h2>Lista de Usuarios</h2>
         
         <script type="text/javascript">
             function confirmar() {
