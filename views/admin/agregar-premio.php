@@ -13,18 +13,23 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/admin/agregar-premio.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Sesión Administrador</title>
 </head>
 <body>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+
     <header class="header">
         <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
     </header>
 
     <nav class="nav">
-        <ul class="barnav">
-            <a class="menu" href="../../views/entrar-administrador.php">Usuarios</a>
-            <a class="menu" href="catalogo.php">Catálogo De Premios</a>
+    <ul class="barnav">
+            <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
+            <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
@@ -32,7 +37,7 @@
     </nav>
 
     <div class="form-resgistro">
-        <form action="../../controlador/admin/c-registro-premio.php" method="POST" class="formulario">
+    <form action="../../controlador/admin/c-registro-premio.php" method="POST" class="formulario" enctype="multipart/form-data">
             <h1 class="title-registro">Agregar Premio</h1>
 
             <div class="contenedor-entrada">
@@ -74,8 +79,12 @@
             </div>
 
             <div class="contenedor-entrada">
-                <input type="text" id="imagen_rec" name="imagen_rec" class="recibir" placeholder="a" required>
-                <label for="imagen_rec" class="etiqueta">Imagen Premio</label>
+                <label for="imagen_rec">Imagen del Premio</label>
+                <input type="file" id="imagen_rec" name="imagen_rec" accept="image/*">
+                <?php if (isset($datos->imagen_rec) && !empty($datos->imagen_rec)): ?>
+                    <img src="../../img/img-catalogo/<?= htmlspecialchars($datos->imagen_rec, ENT_QUOTES, 'UTF-8') ?>" alt="Imagen actual" width="100">
+                    <input type="hidden" name="imagen_actual" value="<?= htmlspecialchars($datos->imagen_rec, ENT_QUOTES, 'UTF-8') ?>"> <!-- Campo oculto para la imagen actual -->
+                <?php endif; ?>
             </div>
                 
             <input id="btn-ingresar" name="btn-ingresar" type="submit" class="boton-registro" value="agregar premio">

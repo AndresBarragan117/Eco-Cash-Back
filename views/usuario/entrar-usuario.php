@@ -2,7 +2,7 @@
     include "../../modelo/conexion.php"; // Asegúrate de incluir la conexión a la base de datos
     session_start(); // Iniciar la sesión
 
-    if (!isset($_SESSION['primer_nombre_usr']) || !isset($_SESSION['segundo_nombre_usr']) || !isset($_SESSION['primer_apellido_usr']) || !isset($_SESSION['segundo_apellido_usr']) || !isset($_SESSION['puntos_acumulados_usr'])) {
+    if (!isset($_SESSION['primer_nombre_usr']) || !isset($_SESSION['primer_apellido_usr']) || !isset($_SESSION['puntos_acumulados_usr']) || !isset($_SESSION['codigo_qr_usr'])) {
         header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
         exit();
     }
@@ -17,9 +17,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/entrar.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Sesión Estudiante</title>
 </head>
 <body>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+    
     <header class="header">
         <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
@@ -27,7 +32,7 @@
 
     <nav class="nav">
         <ul class="barnav">
-            <a class="menu" href="../../views/entrar-usuario.php">Puntos</a>
+            <a class="menu" href="../../views/usuario/entrar-usuario.php">Puntos</a>
             <a class="menu" href="">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
@@ -37,9 +42,9 @@
 
     <section>
         <div class="informacion">
-            <h2>¡Bienvenid@ <?=  $_SESSION['primer_nombre_usr'] ." ". $_SESSION['segundo_nombre_usr'] ." ". $_SESSION['primer_apellido_usr'] ." ". $_SESSION['segundo_apellido_usr'] ?>!</h2>
+            <h2>¡Bienvenid@ <?= $_SESSION['primer_nombre_usr'] . " " . $_SESSION['primer_apellido_usr'] ?>!</h2>
             <div class="informacion-usuario">
-                <img src="../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
+                <img src="../../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
                 <div>
                     <div class="puntos">
                         <img class="icono" src="../../img/icono_hoja.png" alt="icono de hoja">
@@ -47,7 +52,7 @@
                         <h2><?= $_SESSION['puntos_acumulados_usr'] ?></h2> 
                     </div>
                     <div class="qr">
-                        <img class="img-qr" src="../../img/img-qr.png" alt="">
+                        <img class="img-qr" src="../../qrcodes/usuarios/<?= $_SESSION['codigo_qr_usr'] ?>" alt="QR Personal">
                         <h3>QR Personal</h3>
                     </div>
                 </div>
