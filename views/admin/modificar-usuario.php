@@ -1,9 +1,8 @@
 <?php
-    $id_usuario = $_GET['id']; // Obtener el ID del usuario desde la URL
-    
     include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include "../../controlador/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
-
+    include "../../controlador/admin/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
+    
+    $id_usuario = $_GET['id']; // Obtener el ID del usuario desde la URL
     $consulta = "SELECT * FROM usuarios WHERE id_usuario_usr = $id_usuario"; // Consulta para obtener los datos del usuario
     $resultado = $conn->query($consulta); // Ejecutar la consulta
 ?>
@@ -18,6 +17,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/modificar-usuario.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Actualizar Usuario</title>
 </head>
 <body>
@@ -81,7 +82,7 @@
                     </div>
 
                     <div class="contenedor-entrada">
-                        <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required value="<?= $datos->contrasena_hash_usr ?>">
+                        <input type="text" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required value="<?= $datos->contrasena_hash_usr ?>">
                         <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
                     </div>
                     
@@ -90,11 +91,15 @@
                             <option value="estudiante" <?= $datos->rol_usr == 'estudiante' ? 'selected' : '' ?>>Estudiante</option>
                             <option value="administrador" <?= $datos->rol_usr == 'administrador' ? 'selected' : '' ?>>Administrador</option>
                         </select>
-                        <label for="user_type" class="etiqueta">Tipo de Usuario</label>
+                        <label for="rol_usr" class="etiqueta">Tipo de Usuario</label>
                     </div>
 
                     <div class="contenedor-entrada">
-                        <input type="text" id="estado_cuenta_usr" name="estado_cuenta_usr" class="recibir" placeholder="a" required value="<?= $datos->estado_cuenta_usr ?>">
+                        <select id="estado_cuenta_usr" name="estado_cuenta_usr" class="recibir" required>
+                            <option value="activo" <?= $datos->estado_cuenta_usr == 'activo' ? 'selected' : '' ?>>Activo</option>
+                            <option value="suspendido" <?= $datos->estado_cuenta_usr == 'suspendido' ? 'selected' : '' ?>>Suspendido</option>
+                            <option value="inactivo" <?= $datos->estado_cuenta_usr == 'inactivo' ? 'selected' : '' ?>>Inactivo</option>
+                        </select>
                         <label for="estado_cuenta_usr" class="etiqueta">Estado Cuenta</label>
                     </div>
 

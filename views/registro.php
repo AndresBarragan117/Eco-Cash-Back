@@ -1,6 +1,6 @@
 <?php
     include "../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    include_once('../controlador/c-registro-usuario.php'); // Incluir el archivo de controlador para registro de usuario
+    include "../controlador/c-registro-usuario.php"; // Incluir el archivo de controlador para registro de usuario
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +13,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="icon" href="../img/titulo-logo.ico">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <title>Registrarse</title>
 </head>
 <body>
@@ -58,12 +60,12 @@
 
             <div class="contenedor-entrada">
                 <input type="tel" id="telefono_usr" name="telefono_usr" class="recibir" placeholder="a" required>
-                <label for="telefono_usr" class="etiqueta">Telefono</label>
+                <label for="telefono_usr" class="etiqueta">Teléfono</label>
             </div>
 
             <div class="contenedor-entrada">
                 <input type="text" id="cedula_usr" name="cedula_usr" class="recibir" placeholder="a" required>
-                <label for="cedula_usr" class="etiqueta">Cedula</label>
+                <label for="cedula_usr" class="etiqueta">Cédula</label>
             </div>
 
             <div class="contenedor-entrada">
@@ -75,8 +77,13 @@
                 <input type="password" id="contrasena_hash_usr" name="contrasena_hash_usr" class="recibir" placeholder="a" minlength="8" required>
                 <label for="contrasena_hash_usr" class="etiqueta">Contraseña</label>
             </div>
+
+            <div class="contenedor-entrada">
+                <input type="password" id="confirmar_contrasena_usr" name="confirmar_contrasena_usr" class="recibir" placeholder="a" minlength="8" required>
+                <label for="confirmar_contrasena_usr" class="etiqueta">Confirmar Contraseña</label>
+            </div>
             
-            <input id="btn-registro" name="btn-registrarse" type="submit" class="boton-registro" value="registrarse">
+            <input id="btn-registro" name="btn-registrarse" type="submit" class="boton-registro" value="Registrarse">
         </form>
     </div>
 

@@ -23,6 +23,7 @@ a{
     background-color: rgb(255, 255, 255);
     border-radius: 20px 20px 0px 0px;
     margin: 0 auto;
+    margin-top: 1em;
 }
 
 header .logo{
@@ -56,6 +57,7 @@ header .logo{
     align-items: center;
     border-radius: 20px;
     padding: 0;
+    margin-top: 8px;
 }
 
 .menu{
@@ -76,7 +78,6 @@ header .logo{
 }
 
 .menu a{
-    text-decoration: none;
     color: black;
 }
 
@@ -88,6 +89,7 @@ header .logo{
     transform: scale(1.05);
     transition: all 0.3s ease;
     border: 2px solid black;
+    text-decoration: none;
 }
 
 .form-iniciar-sesion {
@@ -115,6 +117,7 @@ header .logo{
 }
 
 .formulario .title-iniciar-sesion {
+    color: black;
     font-size: 50px;
     margin-top: 15px;
     margin-bottom: 30px;
@@ -176,7 +179,7 @@ header .logo{
     left: 15px;
     padding: 0 4px;
     background-color: white;
-    color: black;
+    /*color: black;*/
     font-size: 16px;
     transition: 0.5s;
     z-index: 0;
@@ -205,6 +208,8 @@ header .logo{
     transition: all 0.3s ease;
 }
 
+/*-----------------------------------------------*/
+
 .footer {
     line-height: 1.5;
     background-color: #505050;
@@ -221,15 +226,26 @@ header .logo{
     flex-direction: column;
     gap: 10px; 
     margin-bottom: 10px;
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
 }
 
 .avisos a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .derechos {
     margin-top: auto; 
 }
+
+.icono-redes{
+    background-color: #505050;
+    padding: 0em;
+    margin-top: 0px;
+}
+
 .redes-sociales{
     margin-bottom: 10px;
 }
