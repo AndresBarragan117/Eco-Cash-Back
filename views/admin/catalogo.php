@@ -49,14 +49,13 @@
         <ul class="barnav">
             <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
             <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
-            <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
 
     <section class="caja-catalogo">
-        <h1>Catálogo de Premios</h1>
+        <h2>Catálogo de Premios</h2>
         <div class="caja-boton">
             <a class="btn-ingresar" href="../../views/admin/agregar-premio.php">Ingresar Premio</a>
         </div>
@@ -98,7 +97,7 @@
                             <td><?= $datos->stock_disponible_rec; ?></td>
                             <td><?= $datos->tipo_recompensa_rec; ?></td>
                             <td><?= $datos->estado_rec; ?></td>
-                            <td><img src="../../img/img-catalogo/<?= $datos->imagen_rec; ?>" alt="Imagen del Premio" width="100"></td>
+                            <td style="text-align: center;"><img src="../../img/img-catalogo/<?= $datos->imagen_rec; ?>" alt="Imagen del Premio" width="100"></td>
                             <td>
                                 <a class="btn btn-warning btn-sm" href="../../views/admin/modificar-premio.php?id=<?= $datos->id_recompensa_rec; ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a class="btn btn-danger btn-sm" href="../../controlador/admin/c-eliminar-premio.php?id=<?= $datos->id_recompensa_rec; ?>" title="Eliminar" onclick="return confirmar();"><i class="fa-solid fa-trash"></i></a>
