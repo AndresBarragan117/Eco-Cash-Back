@@ -26,9 +26,9 @@
     <nav class="nav">
         <ul class="barnav">
             <a class="menu" href="../index.php">Inicio</a>
-            <a class="menu" href="../index.php#nosotros">Nosotros</a>
-            <a class="menu" href="../index.php#premios">Premios</a>
-            <a class="menu" href="../index.php#como-participar">Cómo Participar</a>
+            <a class="menu" href="../index.php#icono-nosotros">Nosotros</a>
+            <a class="menu" href="../index.php#icono-premios">Premios</a>
+            <a class="menu" href="../index.php#icono-como-participar">Cómo Participar</a>
             <a class="menu" href="registro.php">Registrarse</a>
             <a class="menu" href="../views/inicio-sesion.php">Iniciar Sesión</a>
         </ul>
