@@ -39,7 +39,7 @@
     </section>
 
     <section id="nosotros" class="nosotros">
-        <div class="icono-titulo">
+        <div id="icono-nosotros" class="icono-titulo">
             <img class="icono" src="img/icono_nosotros.png" alt="">
             <h1>Nosotros</h1>
         </div>
@@ -99,7 +99,7 @@
     </section>
 
     <section id="premios" class="premios">
-        <div class="icono-titulo">
+        <div id="icono-premios" class="icono-titulo">
             <img class="icono" src="img/icono_premios.png" alt="">
             <h1>Premios</h1>
         </div>
@@ -138,7 +138,7 @@
     </section>
 
     <section id="como-participar" class="como-participar">
-        <div class="icono-titulo">
+        <div id="icono-como-participar" class="icono-titulo">
             <img class="icono" src="img\icono_como_participar.png" alt="">
             <h1>Como Participar</h1>
         </div>

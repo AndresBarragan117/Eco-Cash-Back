@@ -18,6 +18,7 @@
             $verificar = $conn->query("SELECT * FROM usuarios WHERE correo_electronico_usr = '$email' AND contrasena_hash_usr = '$password' AND rol_usr = '$user_type'");
 
             if($datos = $verificar->fetch_object()){
+                $_SESSION['id_usuario_usr'] = $datos->id_usuario_usr; // Asegúrate de guardar el ID del usuario
                 $_SESSION['primer_nombre_usr'] = $datos->primer_nombre_usr;
                 $_SESSION['primer_apellido_usr'] = $datos->primer_apellido_usr;
                 $_SESSION['puntos_acumulados_usr'] = $datos->puntos_acumulados_usr;
