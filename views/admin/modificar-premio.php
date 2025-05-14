@@ -1,6 +1,11 @@
 <?php
     include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
     session_start(); // Iniciar la sesión
+    // Verifica si la sesión está activa y si el usuario ha iniciado sesión. Si no, redirige a la página de inicio de sesión.
+    if (!isset($_SESSION['id_usuario_usr'])) {
+        header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
+        exit();
+    }
 
     $id_premio = $_GET['id'];
     $consulta = "SELECT * FROM recompensas WHERE id_recompensa_rec = $id_premio"; // Consulta para obtener los datos del premio

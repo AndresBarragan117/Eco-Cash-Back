@@ -1,6 +1,12 @@
 <?php
     include "../../modelo/conexion.php";
     session_start();
+
+    // Verificar si el usuario ha iniciado sesión
+    if (!isset($_SESSION['id_usuario_usr'])) {
+        header("Location: ../../views/usuario/entrar-usuario.php"); // Redirigir al login si no hay sesión
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +34,14 @@
     <nav class="nav">
         <ul class="barnav">
             <a class="menu" href="../../views/usuario/entrar-usuario.php">Puntos</a>
-            <a class="menu" href="">Catálogo De Premios</a>
+            <a class="menu" href="../../views/usuario/catalogo-usuario.php">Catálogo De Premios</a>
             <a class="menu" href="">Materiales Reciclados</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
 
+    <!-- Sección del catálogo de premios -->
     <section class="catalogo">
         <div class="container">
             <h2 class="titulo-h3">Catálogo de Premios</h2>
@@ -58,7 +65,8 @@
                                             <span class="full-description d-none"><?= $datos->descripcion_rec ?></span>
                                             <button class="btn btn-link toggle-description">Leer más</button>
                                         </p>
-                                        <button class="btn btn-primary" onclick="addToCart('<?= $datos->nombre_recompensa_rec ?>', <?= $datos->costo_puntos_rec ?>)">Agregar</button>
+                                        <!-- Botón para agregar al carrito, Permite agregar la recompensa al carrito llamando a la función addToCart -->
+                                        <button class="btn btn-primary" onclick="addToCart(<?= $datos->id_recompensa_rec ?>, '<?= $datos->nombre_recompensa_rec ?>', <?= $datos->costo_puntos_rec ?>)">Agregar</button>
                                     </div>
                                 </div>
                             </div>
@@ -72,21 +80,22 @@
         </div>
     </section>
 
+    <!-- Sección del carrito de compras -->
     <section class="cart">
         <h2 class="cart-title">Tu Carrito</h2>
         <p id="user-points" class="cart-points"><strong>Puntos disponibles: <?= $_SESSION['puntos_acumulados_usr'] ?> puntos</strong></p>
         <div id="cart-items" class="cart-items">
-            <!-- Los items del carrito se agregarán aquí dinámicamente -->
+        <!-- Los items del carrito se agregarán aquí dinámicamente -->
         </div>
         <div id="cart-total" class="cart-total">
             <strong>Total Puntos: 0</strong>
         </div>
-        <button href="../../controlador/c-canjear-recompensa.php" class="checkout-btn" onclick="checkout()">Proceder al Pago</button>
+        <!-- Botón para proceder al canje, Llama a la función checkout -->
+        <button class="checkout-btn" onclick="checkout()">Proceder al Canje</button>
     </section>
 
     <script>
-        // Mostrar/ocultar descripción completa
-        // Agregar evento de clic a los botones de "Leer más"
+        // Mostrar/ocultar descripción completa, Agregar evento de clic a los botones de "Leer más"
         document.addEventListener('DOMContentLoaded', function () { // Esperar a que el DOM esté completamente cargado
             const toggleButtons = document.querySelectorAll('.toggle-description'); // Seleccionar todos los botones de "Leer más"
 
@@ -115,26 +124,27 @@
         let total = 0;
         let userPoints = <?= $_SESSION['puntos_acumulados_usr'] ?>; // Puntos del usuario
 
-        // Funciones del carrito
-        function addToCart(name, price) { // Agregar un producto al carrito
-            if (price > userPoints - total) { // Verificar si el usuario tiene suficientes puntos
-                alert('No tienes suficientes puntos para canjear esta recompensa.'); // Mostrar alerta
-                return; // Salir de la función
+        // Funcion Agrega un producto al carrito.
+        function addToCart(id, name, price) {
+            if (price > userPoints - total) {
+                alert('No tienes suficientes puntos para canjear esta recompensa.');
+                return;
             }
 
-            cart.push({ name, price }); // Agregar el producto al carrito
-            total += price; // Sumar el precio al total
-            updateCart(); // Actualizar el carrito
+            cart.push({ id, name, price });
+            total += price;
+            updateCart();
         }
 
-        function removeFromCart(index) { // Eliminar un producto del carrito
+        // función elimina un producto del carrito
+        function removeFromCart(index) {
             total -= cart[index].price; // Restar el precio del total
             cart.splice(index, 1); // Eliminar el producto del carrito
             updateCart(); // Actualizar el carrito
         }
 
         // Actualizar el carrito
-        // Esta función actualiza la visualización del carrito y el total de puntos
+        // función actualiza la visualización del carrito y el total de puntos
         function updateCart() {
             const cartItems = document.getElementById('cart-items'); // Obtener el contenedor del carrito
             const cartTotal = document.getElementById('cart-total'); // Obtener el contenedor del total
@@ -161,18 +171,46 @@
             userPointsDisplay.innerHTML = `<strong>Puntos disponibles: ${userPoints - total}</strong>`; // Mostrar los puntos restantes
         }
 
+        // Función Envía los datos del carrito al servidor para procesar el canje.
         function checkout() {
-            if (cart.length === 0) { // Verificar si el carrito está vacío
-                alert('Tu carrito está vacío.'); // Mostrar alerta
-                return; // Salir de la función
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
             }
 
-            if (total > userPoints) { // Verificar si el usuario tiene suficientes puntos
-                alert('No tienes suficientes puntos para completar el canje.'); // Mostrar alerta
-                return; // Salir de la función
+            if (total > userPoints) {
+                alert('No tienes suficientes puntos para completar el canje.');
+                return;
             }
 
-            // Enviar los datos del carrito al servidor
+            console.log('Enviando datos al servidor:', { totalPuntos: total, cartItems: cart });
+
+            fetch('../../controlador/usuario/c-canjear-recompensa.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ totalPuntos: total, cartItems: cart }),
+            })
+                .then(response => {
+                    console.log('Respuesta del servidor recibida:', response);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Datos procesados del servidor:', data);
+                    if (data.success) {
+                        alert(data.message);
+                        cart = [];
+                        total = 0;
+                        updateCart();
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al procesar la solicitud:', error);
+                    alert('Ocurrió un error al enviar los datos.');
+                });
         }
     </script>
 
