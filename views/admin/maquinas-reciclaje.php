@@ -1,6 +1,6 @@
 <?php
     include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
-    session_start(); // Iniciar la sesión
+    session_start();
 
     // Verifica si la sesión está activa y si el usuario ha iniciado sesión. Si no, redirige a la página de inicio de sesión.
     if (!isset($_SESSION['id_usuario_usr'])) {
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Catálogo Administrador</title>
+    <title>Maquinas De Reciclaje</title>
 </head>
 <body>
     <!-- jquery -->
@@ -45,7 +45,7 @@
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../js/admin/ordenar-premios.js"></script>
-        
+
     <header class="header">
         <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
@@ -61,80 +61,69 @@
         </ul>
     </nav>
 
-    <section class="caja-catalogo">
-        <h2>Catálogo de Premios</h2>
-        <div class="caja-boton">
-            <a class="btn-ingresar" href="../../views/admin/agregar-premio.php">Ingresar Premio</a>
-        </div>
-        <div class="premios">
-
-            <script type="text/javascript">
-                function confirmar() {
-                    return confirm("¿Está seguro de que desea eliminar este premio?");
-                }
-            </script>
-
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <section>
+        <div class="container mt-5">
+            <h2 class="text-center">Máquinas De Reciclaje</h2>
+            <div class="caja-boton">
+                <a class="btn-ingresar" href="../../views/admin/agregar-maquina.php">Ingresar Máquina</a>
+            </div>
+            <table class="table table-bordered table-striped mt-4">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre del Premio</th>
-                        <th>Descripción</th>
-                        <th>Costo de Puntos</th>
-                        <th>Stock Disponible</th>
-                        <th>Tipo de Premio</th>
+                        <th>Ubicación</th>
                         <th>Estado</th>
-                        <th>Imagen</th>
+                        <th>Último Mantenimiento</th>
+                        <th>Modelo</th>
+                        <th>Capacidad Actual (Vidrio)</th>
+                        <th>Capacidad Máxima (Vidrio)</th>
+                        <th>Capacidad Actual (Plástico)</th>
+                        <th>Capacidad Máxima (Plástico)</th>
+                        <th>Capacidad Actual (Metal)</th>
+                        <th>Capacidad Máxima (Metal)</th>
+                        <th>Capacidad Actual (Cartón)</th>
+                        <th>Capacidad Máxima (Cartón)</th>
+                        <th>Capacidad Actual (Pilas)</th>
+                        <th>Capacidad Máxima (Pilas)</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        $mostrar_recompensas = "SELECT * FROM recompensas";
-                        $resultado = mysqli_query($conn, $mostrar_recompensas);
+                    $mostrar_maquinas = "SELECT * FROM maquinas_reciclaje";
+                    $result = $conn->query($mostrar_maquinas);
 
-                        while ($datos = $resultado->fetch_object()) 
-                        {
-                    ?>
-                        <tr>
-                            <td><?= $datos->id_recompensa_rec; ?></td>
-                            <td><?= $datos->nombre_recompensa_rec; ?></td>
-                            <td><?= $datos->descripcion_rec; ?></td>
-                            <td><?= $datos->costo_puntos_rec; ?></td>
-                            <td><?= $datos->stock_disponible_rec; ?></td>
-                            <td><?= $datos->tipo_recompensa_rec; ?></td>
-                            <td><?= $datos->estado_rec; ?></td>
-                            <td style="text-align: center;"><img src="../../img/img-catalogo/<?= $datos->imagen_rec; ?>" alt="Imagen del Premio" width="100"></td>
-                            <td>
-                                <a class="btn btn-warning btn-sm" href="../../views/admin/modificar-premio.php?id=<?= $datos->id_recompensa_rec; ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a class="btn btn-danger btn-sm" href="../../controlador/admin/c-eliminar-premio.php?id=<?= $datos->id_recompensa_rec; ?>" title="Eliminar" onclick="return confirmar();"><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row['id_maquina_mac'] . "</td>";
+                            echo "<td>" . $row['ubicacion_mac'] . "</td>";
+                            echo "<td>" . $row['estado_mac'] . "</td>";
+                            echo "<td>" . $row['ultima_mantenimiento_mac'] . "</td>";
+                            echo "<td>" . $row['modelo_maquina_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_actual_vidrio_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_maxima_vidrio_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_actual_plastico_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_maxima_plastico_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_actual_metal_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_maxima_metal_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_actual_carton_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_maxima_carton_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_actual_pilas_mac'] . "</td>";
+                            echo "<td>" . $row['capacidad_maxima_pilas_mac'] . "</td>";
+                            echo "<td>
+                                    <a href='editar-maquina.php?id=" . $row['id_maquina_mac'] . "' class='btn btn-warning btn-sm'>Editar</a>
+                                    <a href='eliminar-maquina.php?id=" . $row['id_maquina_mac'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta máquina?\")'>Eliminar</a>
+                                </td>";
+                            echo "</tr>";
                         }
+                    } else {
+                        echo "<tr><td colspan='16' class='text-center'>No hay datos disponibles</td></tr>";
+                    }
                     ?>
+                </tbody>
             </table>
         </div>
     </section>
-
-    <footer class="footer">
-        <section class="icono-redes">
-            <div class="redes-sociales">
-                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-facebook"></i></i></a>
-                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.google.com" target="_blank"><i class="fa-brands fa-google-plus"></i></a>
-            </div>
-        </section>
-        <section class="avisos">
-            <a href="#">Avisos Legales</a>
-            <a href="#">Políticas de Privacidad</a>
-            <a href="#">Políticas de Cookies</a> 
-        </section>
-        <div class="derechos">
-            <p>&copy; 2025 - Eco Cash Back | Todos los Derechos Reservados</p>
-        </div>
-    </footer>
 </body>
 </html>
