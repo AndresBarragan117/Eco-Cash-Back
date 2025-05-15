@@ -51,7 +51,7 @@ if (!empty($_POST['btn-actualizar-premio'])) {
             tipo_recompensa_rec='$tipo_recompensa_rec', 
             estado_rec='$estado_rec', 
             imagen_rec='$imagen_rec' 
-            WHERE id_recompensa_rec=$id_recompensa_rec";
+        WHERE id_recompensa_rec=$id_recompensa_rec";
 
         if ($conn->query($actualizar_premio) === TRUE) {
             echo "<script>

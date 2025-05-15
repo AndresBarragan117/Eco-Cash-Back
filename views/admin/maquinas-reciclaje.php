@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../../css/catalogo-admin.css">
+    <link rel="stylesheet" href="../../css/admin/maquina-reciclaje.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
     <!-- data tables -->
     <link href="https://cdn.datatables.net/2.3.0/css/dataTables.bootstrap5.min.css" rel="stylesheet" integrity="sha384-xkQqWcEusZ1bIXoKJoItkNbJJ1LG5QwR5InghOwFLsCoEkGcNLYjE0O83wWruaK9" crossorigin="anonymous">
@@ -44,7 +44,7 @@
     <script src="https://cdn.datatables.net/buttons/3.2.3/js/buttons.print.min.js" integrity="sha384-FvTRywo5HrkPlBKFrm2tT8aKxIcI/VU819roC/K/8UrVwrl4XsF3RKRKiCAKWNly" crossorigin="anonymous"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/admin/ordenar-premios.js"></script>
+    <script src="../../js/admin/ordenar-maquinas.js"></script>
 
     <header class="header">
         <img class="logo" src="../../img/titulo-logo.png" alt="">
@@ -61,13 +61,20 @@
         </ul>
     </nav>
 
-    <section>
-        <div class="container mt-5">
-            <h2 class="text-center">Máquinas De Reciclaje</h2>
-            <div class="caja-boton">
-                <a class="btn-ingresar" href="../../views/admin/agregar-maquina.php">Ingresar Máquina</a>
-            </div>
-            <table class="table table-bordered table-striped mt-4">
+    <section class="caja-maquina">
+        <h2 class="text-center">Máquinas De Reciclaje</h2>
+        <div class="caja-boton">
+            <a class="btn-ingresar" href="../../views/admin/agregar-maquina.php">Ingresar Máquina</a>
+        </div>
+
+        <div class="maquina">
+            <script type="text/javascript">
+                function confirmar() {
+                    return confirm("¿Está seguro de que desea eliminar esta maquina?");
+                }
+            </script>
+
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -90,35 +97,34 @@
                 </thead>
                 <tbody>
                     <?php
-                    $mostrar_maquinas = "SELECT * FROM maquinas_reciclaje";
-                    $result = $conn->query($mostrar_maquinas);
+                        $mostrar_maquinas = "SELECT * FROM maquinas_reciclaje";
+                        $resultado = mysqli_query($conn, $mostrar_maquinas);
 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row['id_maquina_mac'] . "</td>";
-                            echo "<td>" . $row['ubicacion_mac'] . "</td>";
-                            echo "<td>" . $row['estado_mac'] . "</td>";
-                            echo "<td>" . $row['ultima_mantenimiento_mac'] . "</td>";
-                            echo "<td>" . $row['modelo_maquina_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_actual_vidrio_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_maxima_vidrio_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_actual_plastico_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_maxima_plastico_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_actual_metal_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_maxima_metal_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_actual_carton_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_maxima_carton_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_actual_pilas_mac'] . "</td>";
-                            echo "<td>" . $row['capacidad_maxima_pilas_mac'] . "</td>";
-                            echo "<td>
-                                    <a href='editar-maquina.php?id=" . $row['id_maquina_mac'] . "' class='btn btn-warning btn-sm'>Editar</a>
-                                    <a href='eliminar-maquina.php?id=" . $row['id_maquina_mac'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta máquina?\")'>Eliminar</a>
-                                </td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='16' class='text-center'>No hay datos disponibles</td></tr>";
+                        while ($datos = $resultado->fetch_object()) 
+                        {
+                    ?>
+                        <tr>
+                            <td><?= $datos->id_maquina_mac; ?></td>
+                            <td><?= $datos->ubicacion_mac; ?></td>
+                            <td><?= $datos->estado_mac; ?></td>
+                            <td><?= $datos->ultima_mantenimiento_mac; ?></td>
+                            <td><?= $datos->modelo_maquina_mac; ?></td>
+                            <td><?= $datos->capacidad_actual_vidrio_mac; ?></td>
+                            <td><?= $datos->capacidad_maxima_vidrio_mac; ?></td>
+                            <td><?= $datos->capacidad_actual_plastico_mac; ?></td>
+                            <td><?= $datos->capacidad_maxima_plastico_mac; ?></td>
+                            <td><?= $datos->capacidad_actual_metal_mac; ?></td>
+                            <td><?= $datos->capacidad_maxima_metal_mac; ?></td>
+                            <td><?= $datos->capacidad_actual_carton_mac; ?></td>
+                            <td><?= $datos->capacidad_maxima_carton_mac; ?></td>
+                            <td><?= $datos->capacidad_actual_pilas_mac; ?></td>
+                            <td><?= $datos->capacidad_maxima_pilas_mac; ?></td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="../../views/admin/modificar-maquina.php?id=<?= $datos->id_maquina_mac; ?>" title="Actualizar"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a class="btn btn-danger btn-sm" href="../../views/admin/eliminar-maquina.php?id=<?= $datos->id_maquina_mac; ?>" title="Eliminar" onclick="return confirm();"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    <?php
                     }
                     ?>
                 </tbody>

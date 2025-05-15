@@ -36,10 +36,10 @@
     </header>
 
     <nav class="nav">
-    <ul class="barnav">
+        <ul class="barnav">
             <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
             <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
-            <a class="menu" href="">Materiales Reciclados</a>
+            <a class="menu" href="../../views/admin/maquinas-reciclaje.php">Maquinas De Reciclaje</a>
             <a class="menu" href="">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
