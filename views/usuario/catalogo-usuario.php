@@ -36,7 +36,7 @@
             <a class="menu" href="../../views/usuario/entrar-usuario.php">Puntos</a>
             <a class="menu" href="../../views/usuario/catalogo-usuario.php">Catálogo De Premios</a>
             <a class="menu" href="../../views/usuario/historial-material.php">Materiales Reciclados</a>
-            <a class="menu" href="">Cambio de Contraseña</a>
+            <a class="menu" href="../../views/usuario/cambio-contra-usuario.php">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>

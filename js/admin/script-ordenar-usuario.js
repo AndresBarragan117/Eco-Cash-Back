@@ -79,16 +79,16 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
         columnDefs: [ // Definiciones de columnas
             { orderable: false, targets: [2, 3, 4, 5, 6, 9, 10, 11] }, // desactivar ordenación en columnas específicas
             { searchable: false, targets: [0, 3, 4, 5, 6, 7, 10, 11] }, // desactivar búsqueda en columnas específicas
-            { width: "3%", targets: [0] }, // establecer ancho de columna id 
-            { width: "20%", targets: [1] }, // establecer ancho de columna nombre
-            { width: "8%", targets: [2, 3] }, // establecer ancho de columna cedula y columna telefono
-            { width: "10%", targets: [4] }, // establecer ancho de columna correo
-            { width: "5%", targets: [5] }, // establecer ancho de columna contraseña <------ esta columna no se van a ir en la tabla
-            { width: "4%", targets: [6] }, // establecer ancho de columna columna QR <------ esta columna no se van a ir en la tabla
-            { width: "7%", targets: [7] }, // establecer ancho de columna fecha de registro
-            { width: "8%", targets: [8] }, // establecer ancho de columna rol
-            { width: "5%", targets: [9, 10] }, // establecer ancho de columna estado y columna puntos
-            { width: "6%", targets: [11] }  // establecer ancho de columna acciones
+            { width: "4%", target: [0] },   // columna id
+            { width: "20%", target: [1] },  // columna nombre
+            { width: "8%", target: [2, 3] }, // columna cedula y columna telefono
+            { width: "12%", target: [4] },  // columna correo
+            { width: "8%", target: [5] },  // columna contraseña
+            { width: "4%", target: [6] },   // columna QR
+            { width: "7%", target: [7] },   // columna fecha de registro
+            { width: "8%", target: [8] },   // columna rol
+            { width: "5%", target: [9, 10] }, // columna estado y columna puntos
+            { width: "6%", target: [11] }   // columna acciones
         ],
         pageLength: 8, // Número de filas por página
         language: { // Configuración de idioma

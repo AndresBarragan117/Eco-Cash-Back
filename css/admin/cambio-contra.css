@@ -125,7 +125,7 @@ header .logo{
 
 /*---------------------------------------------*/
 
-.form-resgistro {
+.form-cambio {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +216,7 @@ header .logo{
     z-index: 0;
 }
 
-.boton-registro {
+.boton-cambiar {
     display: block;
     margin: auto;
     padding: 15px 30px;
@@ -229,7 +229,7 @@ header .logo{
     margin-top: 1em;
 }
 
-.boton-registro:hover {
+.boton-cambiar:hover {
     background-color: #009c77;
     color: black;
     font-weight: bold;
