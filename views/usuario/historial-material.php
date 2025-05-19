@@ -1,9 +1,10 @@
 <?php
     include "../../modelo/conexion.php"; // Asegúrate de incluir la conexión a la base de datos
     session_start(); // Iniciar la sesión
-
-    if (!isset($_SESSION['primer_nombre_usr']) || !isset($_SESSION['primer_apellido_usr']) || !isset($_SESSION['puntos_acumulados_usr']) || !isset($_SESSION['codigo_qr_usr'])) {
-        header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
+    
+    // Verificar si el usuario ha iniciado sesión
+    if (!isset($_SESSION['id_usuario_usr'])) {
+        header("Location: ../../views/usuario/entrar-usuario.php"); // Redirigir al login si no hay sesión
         exit();
     }
 ?>
@@ -19,7 +20,7 @@
     <link rel="icon" href="../../img/titulo-logo.ico">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-    <title>Sesión Estudiante</title>
+    <title>Materiales Reciclados</title>
 </head>
 <body>
     <!-- jquery -->
@@ -41,22 +42,53 @@
     </nav>
 
     <section>
-        <div class="informacion">
-            <h2>¡Bienvenid@ <?= $_SESSION['primer_nombre_usr'] . " " . $_SESSION['primer_apellido_usr'] ?>!</h2>
-            <div class="informacion-usuario">
-                <img src="../../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
-                <div>
-                    <div class="puntos">
-                        <img class="icono" src="../../img/icono_hoja.png" alt="icono de hoja">
-                        <h3>Puntos Acumulados:</h3>
-                        <h2><?= $_SESSION['puntos_acumulados_usr'] ?></h2> 
-                    </div>
-                    <div class="qr">
-                        <img class="img-qr" src="../../qrcodes/usuarios/<?= $_SESSION['codigo_qr_usr'] ?>" alt="QR Personal">
-                        <h3>QR Personal</h3>
-                    </div>
-                </div>
-            </div>
+        <div class="container mt-5">
+            <h2 class="text-center">Historial de Materiales Reciclados por Categoría</h2>
+            <table class="table table-bordered table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Total Reciclado (c/u)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $id_usuario = $_SESSION['id_usuario_usr'];
+                    $query = "
+                        SELECT 
+                            m.nombre_material_mat AS categoria_material, 
+                            SUM(hmr.cantidad_hmr) AS total_cantidad
+                        FROM 
+                            historial_materiales_reciclados hmr
+                        JOIN 
+                            materiales_reciclables m 
+                        ON 
+                            hmr.id_material_hmr = m.id_material_mat
+                        WHERE 
+                            hmr.id_usuario_hmr = ?
+                        GROUP BY 
+                            m.nombre_material_mat
+                    ";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("i", $id_usuario);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['categoria_material']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['total_cantidad']) . " (c/u)</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2' class='text-center'>No hay registros disponibles</td></tr>";
+                    }
+
+                    $stmt->close();
+                    ?>
+                </tbody>
+            </table>
         </div>
     </section>
 

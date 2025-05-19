@@ -34,7 +34,7 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
         columnDefs: [ // Definiciones de columnas
             { orderable: false, targets: [2, 5, 7, 8] }, // Deshabilitar ordenamiento en columnas específicas
             { searchable: false, targets: [0, 4, 7, 8] }, // Deshabilitar búsqueda en columnas específicas
-            { width: "4%", targets: [0, ] }, // Ancho de la primera columna id
+            { width: "4%", targets: [0] }, // Ancho de la primera columna id
             { width: "20%", targets: [1] }, // Ancho de la segunda columna nombre
             { width: "35%", targets: [2] }, // Ancho de la tercera columna descripción
             { width: "8%", targets: [3, 4, 5, 6] }, // Ancho de la cuarta columna costo puntos, quinta columna stock, sexta columna tipo premio y séptima columna estado
