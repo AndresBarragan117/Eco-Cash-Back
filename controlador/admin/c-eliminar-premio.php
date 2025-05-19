@@ -8,11 +8,15 @@
         $resultado = $conn->query($eliminar_premio);
         
         if($resultado) {
-            //header('Location: catalogo.php?mensaje=Premio eliminado correctamente');
-            echo "<script>alert('Premio eliminado correctamente'); location.href='../../views/admin/catalogo.php?mensaje=Premio eliminado correctamente';</script>";
+            echo "<script>
+                    alert('Premio eliminado correctamente'); 
+                    location.href='../../views/admin/catalogo.php?mensaje=Premio eliminado correctamente';
+                </script>";
         } else {
-            //header('Location: catalogo.php?mensaje=Error al eliminar el premio');
-            echo "<script>alert('Error al eliminar el premio'); location.href='../../views/admin/catalogo.php?mensaje=Error al eliminar el premio';</script>";
+            echo "<script>
+                    alert('Error al eliminar el premio'); 
+                    location.href='../../views/admin/catalogo.php?mensaje=Error al eliminar el premio';
+                </script>";
         }
     } else {
         header('Location: ../../views/admin/catalogo.php?mensaje=ID de premio no proporcionado');

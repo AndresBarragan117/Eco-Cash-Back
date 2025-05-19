@@ -1,12 +1,14 @@
 <?php
-    include "../../modelo/conexion.php"; // Asegúrate de incluir la conexión a la base de datos
+    include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
     session_start(); // Iniciar la sesión
 
-    if (!isset($_SESSION['primer_nombre_usr']) || !isset($_SESSION['primer_apellido_usr']) || !isset($_SESSION['puntos_acumulados_usr']) || !isset($_SESSION['codigo_qr_usr'])) {
+    // Verifica si la sesión está activa y si el usuario ha iniciado sesión. Si no, redirige a la página de inicio de sesión.
+    if (!isset($_SESSION['id_usuario_usr'])) {
         header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
         exit();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +16,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../css/entrar.css">
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../../css/admin/cambio-contra.css">
     <link rel="icon" href="../../img/titulo-logo.ico">
+    <!-- data tables -->
+    <link href="https://cdn.datatables.net/2.3.0/css/dataTables.bootstrap5.min.css" rel="stylesheet" integrity="sha384-xkQqWcEusZ1bIXoKJoItkNbJJ1LG5QwR5InghOwFLsCoEkGcNLYjE0O83wWruaK9" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/buttons/3.2.3/css/buttons.bootstrap5.min.css" rel="stylesheet" integrity="sha384-DJhypeLg79qWALC844KORuTtaJcH45J+36wNgzj4d1Kv1vt2PtRuV2eVmdkVmf/U" crossorigin="anonymous">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-    <title>Sesión Estudiante</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cambio de Contraseña</title>
 </head>
 <body>
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
     <header class="header">
         <img class="logo" src="../../img/titulo-logo.png" alt="">
         <h1 class="title-header">Eco Cash Back</h1>
@@ -40,24 +44,26 @@
         </ul>
     </nav>
 
-    <section>
-        <div class="informacion">
-            <h2>¡Bienvenid@ <?= $_SESSION['primer_nombre_usr'] . " " . $_SESSION['primer_apellido_usr'] ?>!</h2>
-            <div class="informacion-usuario">
-                <img src="../../img/ilustracion-de-botella-de-personaje-de-limpieza.webp" alt="">
-                <div>
-                    <div class="puntos">
-                        <img class="icono" src="../../img/icono_hoja.png" alt="icono de hoja">
-                        <h3>Puntos Acumulados:</h3>
-                        <h2><?= $_SESSION['puntos_acumulados_usr'] ?></h2> 
-                    </div>
-                    <div class="qr">
-                        <img class="img-qr" src="../../qrcodes/usuarios/<?= $_SESSION['codigo_qr_usr'] ?>" alt="QR Personal">
-                        <h3>QR Personal</h3>
-                    </div>
-                </div>
+    <section class="form-cambio">
+        <form action="../../controlador/usuario/c-cambio-contra-usuario.php" method="POST" class="formulario">
+            <h2 class="title-registro">Cambio de Contraseña</h2>
+
+            <div class="contenedor-entrada">
+                <input type="password" name="contra_actual" id="contra_actual" class="recibir" placeholder=" " required>
+                <label for="contra_actual" class="etiqueta">Contraseña Actual</label>
             </div>
-        </div>
+
+            <div class="contenedor-entrada">
+                <input type="password" name="nueva_contra" id="nueva_contra" class="recibir" placeholder=" " required>
+                <label for="nueva_contra" class="etiqueta">Nueva Contraseña</label>
+            </div>
+            <div class="contenedor-entrada">
+                <input type="password" name="confirmar_contra" id="confirmar_contra" class="recibir" placeholder=" " required>
+                <label for="confirmar_contra" class="etiqueta">Confirmar Nueva Contraseña</label>
+            </div>
+
+            <input type="submit" name="btn-cambiar-contra" value="Cambiar Contraseña" class="boton-cambiar">
+        </form>
     </section>
 
     <footer class="footer">

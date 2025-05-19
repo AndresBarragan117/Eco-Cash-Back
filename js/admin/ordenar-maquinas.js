@@ -8,22 +8,7 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Exportar a Excel', // Tooltip al pasar el mouse
                 className: 'btn btn-success', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(16))', // Excluir la columna 9 (Acciones)
                 }
             },
             {
@@ -32,22 +17,7 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Exportar a PDF', // Tooltip al pasar el mouse
                 className: 'btn btn-danger', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(16))', // Excluir la columna 9 (Acciones)
                 }
             },
             {
@@ -56,39 +26,21 @@ $(document).ready(function() { // Esperar a que el DOM esté completamente carga
                 titleAttr: 'Imprimir', // Tooltip al pasar el mouse
                 className: 'btn btn-info', // Clase CSS para el botón
                 exportOptions: {
-                    columns: ':not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(12))', // Excluir columnas 5, 6 y 11
-                    format: {
-                        body: function(data, row, column, node) {
-                            // Personalizar la columna de estado (columna 10)
-                            if (column === 9) { // Índice de la columna Estado (base 0)
-                                if ($(node).find('i').hasClass('fa-user-check')) {
-                                    return 'Activo';
-                                } else if ($(node).find('i').hasClass('fa-circle-xmark')) {
-                                    return 'Inactivo';
-                                } else if ($(node).find('i').hasClass('fa-ban')) {
-                                    return 'Suspendido';
-                                }
-                            }
-                            return data; // Devolver el contenido original para las demás columnas
-                        }
-                    }
+                    columns: ':not(:nth-child(16))', // Excluir la columna 9 (Acciones)
                 }
             }
         ], // Definir los botones para exportar
         lengthMenu: [5, 10, 15, 20, 25, 50], // Opciones de longitud de página
         columnDefs: [ // Definiciones de columnas
-            { orderable: false, targets: [2, 3, 4, 5, 6, 9, 10, 11] }, // desactivar ordenación en columnas específicas
-            { searchable: false, targets: [0, 3, 4, 5, 6, 7, 10, 11] }, // desactivar búsqueda en columnas específicas
-            { width: "4%", target: [0] },   // columna id
-            { width: "20%", target: [1] },  // columna nombre
-            { width: "8%", target: [2, 3] }, // columna cedula y columna telefono
-            { width: "12%", target: [4] },  // columna correo
-            { width: "8%", target: [5] },  // columna contraseña
-            { width: "4%", target: [6] },   // columna QR
-            { width: "7%", target: [7] },   // columna fecha de registro
-            { width: "8%", target: [8] },   // columna rol
-            { width: "5%", target: [9, 10] }, // columna estado y columna puntos
-            { width: "6%", target: [11] }   // columna acciones
+            { orderable: false, targets: [6, 8, 10, 12, 14, 15] }, // Deshabilitar ordenamiento en columnas específicas
+            { searchable: false, targets: [0, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] }, // Deshabilitar búsqueda en columnas específicas
+            { width: "4%", targets: [0] }, // Ancho de la columna id
+            { width: "10%", targets: [1] }, // Ancho de la columna ubicación
+            { width: "10%", targets: [2] }, // Ancho de la columna estado
+            { width: "10%", targets: [3] }, // Ancho de la columna ultimo mantenimiento
+            { width: "10%", targets: [4] }, // Ancho de la columna modelo
+            { width: "4%", targets: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] }, // Ancho de las columnas: capacidad actual vidrio, capacidad maxima vidrio, capacidad actual plastico, capacidad maxima plastico, capacidad actual metal, capacidad maxima metal, capacidad actual carton, capacidad maxima carton, capacidad actual pilas, capacidad maxima pilas
+            { width: "4%", targets: [15] }, // Ancho de la columna 15
         ],
         pageLength: 8, // Número de filas por página
         language: { // Configuración de idioma

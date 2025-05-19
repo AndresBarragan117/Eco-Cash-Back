@@ -1,8 +1,7 @@
 <?php
     include "../../modelo/conexion.php"; // Incluir el archivo de conexión a la base de datos
     include "../../controlador/admin/c-modificar-usuario.php"; // Incluir el archivo de controlador para modificar usuario
-    // Iniciar la sesión
-    session_start(); // Iniciar la sesión
+    
     // Verifica si la sesión está activa y si el usuario ha iniciado sesión. Si no, redirige a la página de inicio de sesión.
     if (!isset($_SESSION['id_usuario_usr'])) {
         header("Location: ../../views/inicio-sesion.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
@@ -38,8 +37,8 @@
         <ul class="barnav">
             <a class="menu" href="../../views/admin/entrar-administrador.php">Usuarios</a>
             <a class="menu" href="../../views/admin/catalogo.php">Catálogo De Premios</a>
-            <a class="menu" href="">Materiales Reciclados</a>
-            <a class="menu" href="">Cambio de Contraseña</a>
+            <a class="menu" href="../../views/admin/maquinas-reciclaje.php">Maquinas De Reciclaje</a>
+            <a class="menu" href="../../views/admin/cambio-contra.php">Cambio de Contraseña</a>
             <a class="menu" href="../../controlador/c-cerrar-sesion.php">Cerrar Sesión</a>
         </ul>
     </nav>
