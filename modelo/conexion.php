@@ -1,10 +1,17 @@
 <?php
 	
+	$servername = "";
+	$username = "";
+	$password = "";
+	$dbname = "";
+
+	/*
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "ecocashback";
- 	
+ 	*/
+	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 
